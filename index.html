@@ -1,79 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — DayDrop</title>
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 24px;
-    line-height: 1.6;
-    color: #1d1d1f;
-    background: #fff;
-  }
-  h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
-  h2 { font-size: 20px; font-weight: 600; margin-top: 32px; }
-  h3 { font-size: 16px; font-weight: 600; margin-top: 24px; }
-  p, li { font-size: 15px; color: #333; }
-  .updated { font-size: 13px; color: #86868b; margin-bottom: 24px; }
-  a { color: #0066cc; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  ul { padding-left: 20px; }
-  li { margin-bottom: 6px; }
-  .summary {
-    background: #f5f5f7;
-    border-radius: 12px;
-    padding: 16px 20px;
-    margin-bottom: 24px;
-  }
-  .summary p { margin: 0; font-weight: 500; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayDrop - Turn Every Countdown Into Celebration</title>
+    <meta name="description" content="Beautiful AI-powered countdowns that keep life's biggest moments front and center. Never miss what matters most with stunning widgets and Live Activities.">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DayDrop - Turn Every Countdown Into Celebration">
+    <meta property="og:description" content="Beautiful AI-powered countdowns for life's biggest moments. Widgets, Live Activities, and stunning AI backgrounds.">
+    <meta property="og:image" content="https://hirakcoder.github.io/daydrop-legal/assets/social-preview.jpg">
+    <meta property="og:url" content="https://hirakcoder.github.io/daydrop-legal/">
+
+    <!-- Apple Smart App Banner -->
+    <meta name="apple-itunes-app" content="app-id=PENDING">
+
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="countdown app, event countdown, countdown widget iOS, timer app, Live Activities, Dynamic Island, countdown timer, event planning timer, birthday countdown, wedding countdown">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/app-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/app-icon.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="g"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><circle cx="50" cy="50" r="30" fill="url(%23g)"/></svg>') center/200px 200px;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .app-store-badges {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .app-store-badge {
+            height: 60px;
+            transition: transform 0.3s ease;
+        }
+
+        .app-store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1.3rem;
+        }
+
+        /* Trust Band */
+        .trust-band {
+            background: #f8f9fa;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .trust-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            color: #6c757d;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            background: #f8f9fa;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .feature p {
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .use-cases h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .use-case {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .use-case:hover {
+            transform: translateY(-3px);
+        }
+
+        .use-case-emoji {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .use-case h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .use-case p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        /* Premium Section */
+        .premium {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .premium h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .premium p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .pricing-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .pricing-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-bottom: 3rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .features, .use-cases, .premium, .cta {
+                padding: 60px 0;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .app-store-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .trust-items {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Turn Every Countdown Into Celebration</h1>
+                <p>Beautiful AI-powered countdowns that keep life's biggest moments front and center. Never miss what matters most.</p>
 
-<h1>Privacy Policy</h1>
-<p class="updated">Last updated: February 2026</p>
+                <div class="app-store-badges">
+                    <a href="https://apps.apple.com/app/daydrop/id6759470132" target="_blank">
+                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1616976000&h=8b6cdb9773e9e0cf0caa8425b8e9c60b"
+                             alt="Download on the App Store"
+                             class="app-store-badge">
+                    </a>
+                </div>
 
-<div class="summary">
-  <p>DayDrop stores all your data locally on your device. We do not collect, track, or sell any personal information.</p>
-</div>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span>Featured App Store Countdown Timer</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2>Data Storage</h2>
-<ul>
-  <li>All countdown events, images, and preferences are stored locally in your device's app container using SwiftData.</li>
-  <li>Data is shared between the main app and widgets via an App Group container — this stays on-device.</li>
-  <li>No data is transmitted to our servers.</li>
-</ul>
+    <!-- Trust Band -->
+    <section class="trust-band">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">✨ AI-Powered Backgrounds</div>
+                <div class="trust-item">📱 Live Activities & Widgets</div>
+                <div class="trust-item">🔒 Privacy First</div>
+                <div class="trust-item">⌚ Apple Watch Support</div>
+            </div>
+        </div>
+    </section>
 
-<h2>Third-Party AI &amp; Data Sharing</h2>
-<p>DayDrop uses third-party services to generate background images for your countdowns. <strong>Before any data is sent, the app asks for your explicit consent.</strong> You can decline and still use the app — local fallback images are always available.</p>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why DayDrop Changes Everything</h2>
 
-<h3>Pexels API</h3>
-<p>When you use the curated background image feature, DayDrop sends a <strong>category keyword</strong> (e.g., "travel", "birthday") to the Pexels API to fetch a relevant stock photo. No personal data is sent. See <a href="https://www.pexels.com/privacy-policy/">Pexels Privacy Policy</a>.</p>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>AI-Generated Backgrounds</h3>
+                    <p>Stunning visuals that match every moment. Your countdowns become works of art with intelligent, contextual backgrounds.</p>
+                </div>
 
-<h3>Together AI</h3>
-<p>When you use AI image generation, DayDrop sends the <strong>event title</strong> to Together AI to generate a background image. No other personal data is sent. See <a href="https://www.together.ai/privacy">Together AI Privacy Policy</a>.</p>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Live Activities & Dynamic Island</h3>
+                    <p>Right on your lock screen when it matters. See your countdowns without opening the app - in Dynamic Island and Live Activities.</p>
+                </div>
 
-<h3>Apple StoreKit</h3>
-<p>Premium subscriptions are managed entirely by Apple's App Store. DayDrop does not process or store payment information. See <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+                <div class="feature">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Widgets Everywhere</h3>
+                    <p>Home screen, lock screen, and Apple Watch. Keep your most important moments visible across every device and screen.</p>
+                </div>
 
-<h3>Apple iCloud (CloudKit)</h3>
-<p>DayDrop syncs your countdown data across your devices using Apple's CloudKit infrastructure. This data is stored in your private iCloud account and is governed by <a href="https://www.apple.com/legal/privacy/">Apple's iCloud Privacy Policy</a>. DayDrop cannot access your iCloud data on our servers.</p>
+                <div class="feature">
+                    <div class="feature-icon">💝</div>
+                    <h3>Beautiful Share Cards</h3>
+                    <p>Celebrate together with gorgeous countdown cards. Share your excitement with friends and family in style.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2>Notifications</h2>
-<p>DayDrop uses <strong>local notifications only</strong> to remind you about upcoming events. No push notification server is involved. Notification content never leaves your device.</p>
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <div class="container">
+            <h2>Perfect For Every Special Moment</h2>
 
-<h2>Analytics &amp; Tracking</h2>
-<p>DayDrop does <strong>not</strong> include any analytics SDKs, crash reporters, or advertising trackers.</p>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <span class="use-case-emoji">🎓</span>
+                    <h4>Life Milestones</h4>
+                    <p>Graduation, wedding, vacation countdowns that build excitement</p>
+                </div>
 
-<h2>Children's Privacy</h2>
-<p>DayDrop does not knowingly collect information from children under 13.</p>
+                <div class="use-case">
+                    <span class="use-case-emoji">💼</span>
+                    <h4>Work Goals</h4>
+                    <p>Project deadlines that inspire instead of stress</p>
+                </div>
 
-<h2>Contact</h2>
-<p>For questions about this privacy policy, contact us at <a href="mailto:daydrop@beatroot.dev">daydrop@beatroot.dev</a>.</p>
+                <div class="use-case">
+                    <span class="use-case-emoji">💪</span>
+                    <h4>Personal Growth</h4>
+                    <p>Fitness goals, habits, achievements</p>
+                </div>
 
+                <div class="use-case">
+                    <span class="use-case-emoji">👨‍👩‍👧‍👦</span>
+                    <h4>Family Moments</h4>
+                    <p>Kids' birthdays, anniversaries, holidays</p>
+                </div>
+
+                <div class="use-case">
+                    <span class="use-case-emoji">🎉</span>
+                    <h4>Celebrations</h4>
+                    <p>New Year, parties, special events</p>
+                </div>
+
+                <div class="use-case">
+                    <span class="use-case-emoji">✈️</span>
+                    <h4>Adventures</h4>
+                    <p>Travel plans, weekend getaways, concerts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Section -->
+    <section class="premium">
+        <div class="container">
+            <h2>Choose Your Experience</h2>
+            <p>Start free with beautiful countdowns, or unlock the full potential with premium features</p>
+
+            <div class="pricing">
+                <div class="pricing-card">
+                    <h4>Monthly</h4>
+                    <div class="price">$1.99</div>
+                    <p>Perfect for trying premium features</p>
+                </div>
+
+                <div class="pricing-card">
+                    <h4>Annual</h4>
+                    <div class="price">$12.99</div>
+                    <p>Best value with 1-month free trial</p>
+                </div>
+
+                <div class="pricing-card">
+                    <h4>Lifetime</h4>
+                    <div class="price">$24.99</div>
+                    <p>Pay once, enjoy forever</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Start Your Most Beautiful Countdowns</h2>
+            <p>Download DayDrop and transform every moment into motivation</p>
+
+            <div class="app-store-badges">
+                <a href="https://apps.apple.com/app/daydrop/id6759470132" target="_blank">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1616976000&h=8b6cdb9773e9e0cf0caa8425b8e9c60b"
+                         alt="Download on the App Store"
+                         class="app-store-badge">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="support.html">Support</a>
+                <a href="mailto:daydrop@beatroot.dev">Contact</a>
+            </div>
+            <p>&copy; 2026 DayDrop. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

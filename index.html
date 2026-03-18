@@ -11,6 +11,7 @@
     <meta property="og:description" content="AI-powered countdowns with Live Activities and stunning widgets">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hirakcoder.github.io/daydrop-legal/">
+    <meta property="og:image" content="https://hirakcoder.github.io/daydrop-legal/assets/AppIcon.png">
 
     <!-- Apple Smart App Banner -->
     <meta name="apple-itunes-app" content="app-id=6759470132">
@@ -22,10 +23,22 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-blue: #007AFF;
+            --secondary-blue: #5AC8FA;
+            --background-dark: #000;
+            --background-secondary: #0a0a0a;
+            --card-background: #1C1C1E;
+            --card-secondary: #2C2C2E;
+            --text-primary: #fff;
+            --text-secondary: #8E8E93;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-            background: #000;
-            color: #fff;
+            background: var(--background-dark);
+            color: var(--text-primary);
             line-height: 1.4;
             overflow-x: hidden;
         }
@@ -34,6 +47,23 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+        }
+
+        /* Scroll Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .parallax {
+            transform: translateZ(0);
+            transition: transform 0.1s linear;
         }
 
         /* Header */
@@ -45,8 +75,16 @@
             right: 0;
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
         }
 
         .header-content {
@@ -56,296 +94,489 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-size: 24px;
             font-weight: 700;
-            background: linear-gradient(45deg, #007AFF, #5AC8FA);
+            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            filter: drop-shadow(0 2px 8px rgba(0, 122, 255, 0.3));
         }
 
         .download-btn {
-            background: linear-gradient(45deg, #007AFF, #5AC8FA);
-            color: #fff;
+            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--text-primary);
             padding: 12px 24px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
             font-size: 16px;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
         }
 
         .download-btn:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 122, 255, 0.4);
         }
 
-        /* Hero */
+        /* Hero Section */
         .hero {
-            padding: 120px 0 80px;
+            padding: 140px 0 100px;
             text-align: center;
-            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 70%);
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, var(--background-dark) 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 122, 255, 0.05) 50%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
-            font-size: clamp(32px, 8vw, 64px);
+            font-size: clamp(36px, 8vw, 72px);
             font-weight: 800;
             margin-bottom: 24px;
-            background: linear-gradient(135deg, #fff 0%, #007AFF 100%);
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-blue) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
             line-height: 1.1;
+            letter-spacing: -0.02em;
         }
 
         .hero p {
-            font-size: clamp(18px, 4vw, 24px);
-            color: #8E8E93;
-            margin-bottom: 40px;
-            max-width: 600px;
+            font-size: clamp(18px, 4vw, 26px);
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.5;
         }
 
-        /* App Showcase */
+        .hero-video {
+            margin: 50px auto;
+            max-width: 320px;
+            position: relative;
+            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
+        }
+
+        .hero-video video {
+            width: 100%;
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-video:hover video {
+            transform: scale(1.02);
+        }
+
+        /* Floating Elements */
+        .floating-widget {
+            position: absolute;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .floating-widget:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-widget:nth-child(2) { top: 60%; right: 15%; animation-delay: 2s; }
+        .floating-widget:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+
+        /* Showcase Sections */
         .showcase {
-            padding: 80px 0;
-            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+            padding: 100px 0;
+            background: var(--background-dark);
+            position: relative;
         }
 
-        .showcase-grid {
+        .showcase-item {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
-            margin-bottom: 80px;
+            margin-bottom: 120px;
+        }
+
+        .showcase-item:nth-child(even) .phone-mockup {
+            order: -1;
         }
 
         .showcase-content h2 {
-            font-size: clamp(28px, 6vw, 48px);
+            font-size: clamp(32px, 6vw, 56px);
             font-weight: 700;
-            margin-bottom: 20px;
-            color: #fff;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+            line-height: 1.2;
         }
 
         .showcase-content p {
-            font-size: 18px;
-            color: #8E8E93;
+            font-size: 20px;
+            color: var(--text-secondary);
             line-height: 1.6;
+            margin-bottom: 30px;
         }
 
+        .feature-highlight {
+            background: linear-gradient(135deg, var(--card-background) 0%, var(--card-secondary) 100%);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
+
+        .feature-highlight h4 {
+            color: var(--primary-blue);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-highlight p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Phone Mockups */
         .phone-mockup {
             position: relative;
-            max-width: 300px;
+            max-width: 350px;
             margin: 0 auto;
         }
 
         .phone-frame {
             width: 100%;
-            height: 600px;
-            background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
-            border-radius: 40px;
-            padding: 20px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            height: 700px;
+            background: linear-gradient(135deg, var(--card-background) 0%, var(--card-secondary) 100%);
+            border-radius: 45px;
+            padding: 25px;
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .phone-frame:hover {
+            transform: translateY(-5px);
         }
 
         .phone-frame::before {
             content: '';
             position: absolute;
-            top: 10px;
+            top: 15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 120px;
-            height: 30px;
-            background: #000;
-            border-radius: 15px;
+            width: 130px;
+            height: 35px;
+            background: var(--background-dark);
+            border-radius: 18px;
             z-index: 10;
         }
 
         .app-screen {
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
-            border-radius: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #8E8E93;
-            font-size: 14px;
+            background: var(--background-dark);
+            border-radius: 35px;
+            overflow: hidden;
             position: relative;
-            padding: 20px;
         }
 
-        .countdown-card {
-            background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
-            border-radius: 16px;
-            padding: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
+        .app-screen img {
             width: 100%;
-            max-width: 240px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            height: 100%;
+            object-fit: cover;
+            border-radius: 35px;
         }
 
-        .live-activity {
-            background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
+        /* Widget Gallery */
+        .widget-gallery {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--background-secondary) 0%, var(--background-dark) 100%);
+        }
+
+        .widget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .widget-card {
+            background: linear-gradient(135deg, var(--card-background) 0%, var(--card-secondary) 100%);
             border-radius: 20px;
-            padding: 12px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .widget-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .widget-card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .widget-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .widget-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.4;
         }
 
         /* Features Grid */
         .features {
-            padding: 80px 0;
-            background: #000;
+            padding: 100px 0;
+            background: var(--background-dark);
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
 
         .feature {
-            background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
+            background: linear-gradient(135deg, var(--card-background) 0%, var(--card-secondary) 100%);
             padding: 40px;
             border-radius: 20px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.2s ease;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(0, 122, 255, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature:hover::before {
+            opacity: 1;
         }
 
         .feature:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            border-color: var(--primary-blue);
         }
 
         .feature-icon {
             font-size: 48px;
             margin-bottom: 20px;
+            display: block;
         }
 
         .feature h3 {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 600;
             margin-bottom: 16px;
-            color: #fff;
+            color: var(--text-primary);
         }
 
         .feature p {
-            color: #8E8E93;
-            line-height: 1.5;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 16px;
         }
 
         /* Pricing */
         .pricing {
-            padding: 80px 0;
-            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--background-secondary) 0%, var(--background-dark) 100%);
             text-align: center;
         }
 
         .pricing h2 {
-            font-size: clamp(28px, 6vw, 48px);
+            font-size: clamp(32px, 6vw, 56px);
             font-weight: 700;
             margin-bottom: 20px;
         }
 
         .pricing-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 60px auto 0;
         }
 
         .pricing-card {
-            background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, var(--card-background) 0%, var(--card-secondary) 100%);
+            padding: 50px 40px;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
             position: relative;
+            transition: all 0.3s ease;
         }
 
         .pricing-card.featured {
-            border-color: #007AFF;
-            box-shadow: 0 0 30px rgba(0, 122, 255, 0.3);
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 40px rgba(0, 122, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
         }
 
         .pricing-card h3 {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .price {
-            font-size: 36px;
+            font-size: 42px;
             font-weight: 800;
-            color: #007AFF;
+            color: var(--primary-blue);
             margin-bottom: 30px;
         }
 
         .features-list {
             list-style: none;
             margin-bottom: 30px;
+            text-align: left;
         }
 
         .features-list li {
-            padding: 8px 0;
-            color: #8E8E93;
+            padding: 10px 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
         }
 
         .features-list li::before {
             content: '✓';
-            color: #007AFF;
+            color: var(--primary-blue);
             font-weight: bold;
-            margin-right: 10px;
+            margin-right: 12px;
+            width: 20px;
         }
 
-        /* CTA */
+        /* CTA Section */
         .cta {
-            padding: 80px 0;
-            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--background-secondary) 0%, #1a1a1a 100%);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 122, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
         }
 
         .cta h2 {
-            font-size: clamp(28px, 6vw, 48px);
+            font-size: clamp(32px, 6vw, 56px);
             font-weight: 700;
-            margin-bottom: 20px;
-            color: #fff;
+            margin-bottom: 24px;
+            color: var(--text-primary);
         }
 
         .cta p {
-            font-size: 20px;
-            margin-bottom: 40px;
+            font-size: 22px;
+            margin-bottom: 50px;
             color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .app-store-badge {
+        .cta-button {
+            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--text-primary);
+            padding: 18px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 20px;
             display: inline-block;
-            margin: 0 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 122, 255, 0.3);
         }
 
-        .app-store-badge img {
-            height: 60px;
-            transition: transform 0.2s ease;
-        }
-
-        .app-store-badge:hover img {
+        .cta-button:hover {
             transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0, 122, 255, 0.4);
         }
 
         /* Footer */
         footer {
-            background: #000;
+            background: var(--background-dark);
             padding: 60px 0 40px;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--border-color);
         }
 
         .footer-links {
@@ -357,13 +588,14 @@
         }
 
         .footer-links a {
-            color: #8E8E93;
+            color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.2s ease;
+            font-size: 16px;
         }
 
         .footer-links a:hover {
-            color: #007AFF;
+            color: var(--primary-blue);
         }
 
         .copyright {
@@ -371,12 +603,16 @@
             font-size: 14px;
         }
 
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .showcase-grid {
+            .showcase-item {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 60px;
                 text-align: center;
+            }
+
+            .showcase-item:nth-child(even) .phone-mockup {
+                order: 0;
             }
 
             .header-content {
@@ -387,15 +623,51 @@
             .download-btn {
                 order: -1;
             }
+
+            .phone-frame {
+                height: 600px;
+                max-width: 280px;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-5px);
+            }
+
+            .floating-widget {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+            }
+
+            .showcase {
+                padding: 80px 0;
+            }
+
+            .widget-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo" style="display: flex; align-items: center; gap: 12px;">
-                    <img src="./assets/AppIcon.png" alt="DayDrop App Icon" style="width: 32px; height: 32px; border-radius: 8px;">
+                <div class="logo">
+                    <img src="./assets/AppIcon.png" alt="DayDrop App Icon">
                     <span>DayDrop: Countdowns</span>
                 </div>
                 <a href="https://apps.apple.com/app/id6759470132" class="download-btn">Download on App Store</a>
@@ -405,46 +677,100 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Never Miss What<br>Matters Most</h1>
-            <p>The only countdown app that puts your biggest moments everywhere on iOS - Dynamic Island, Lock Screen, Apple Watch, and beyond. With AI-powered beauty.</p>
+            <div class="hero-content fade-in-up">
+                <h1>Never Miss What<br>Matters Most</h1>
+                <p>The only countdown app that puts your biggest moments everywhere on iOS - Dynamic Island, Lock Screen, Apple Watch, and beyond. With AI-powered beauty.</p>
 
-            <!-- App Preview Video -->
-            <div style="margin: 40px auto; max-width: 300px;">
-                <video controls autoplay muted loop style="width: 100%; border-radius: 20px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);">
-                    <source src="./assets/preview_final.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="hero-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="./assets/preview_final.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
         </div>
+
+        <!-- Floating Widget Elements -->
+        <div class="floating-widget" style="width: 60px; height: 60px; background: linear-gradient(135deg, #1C1C1E, #2C2C2E); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);"></div>
+        <div class="floating-widget" style="width: 80px; height: 40px; background: linear-gradient(135deg, #1C1C1E, #2C2C2E); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);"></div>
+        <div class="floating-widget" style="width: 50px; height: 50px; background: linear-gradient(135deg, #1C1C1E, #2C2C2E); border-radius: 25px; border: 1px solid rgba(255,255,255,0.1);"></div>
     </section>
 
     <section class="showcase">
         <div class="container">
-            <div class="showcase-grid">
+            <div class="showcase-item fade-in-up">
                 <div class="showcase-content">
                     <h2>Live Activities in Dynamic Island</h2>
                     <p>Watch your biggest moments count down right in your Dynamic Island. See days, hours, and minutes without unlocking your phone. Built for iOS 16+.</p>
+
+                    <div class="feature-highlight">
+                        <h4>Always-On Display</h4>
+                        <p>Your countdown lives in the Dynamic Island, updating in real-time without draining your battery.</p>
+                    </div>
                 </div>
                 <div class="phone-mockup">
                     <div class="phone-frame">
                         <div class="app-screen">
-                            <img src="./assets/event_list.png" alt="DayDrop main interface" style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
+                            <img src="./assets/event_list.png" alt="DayDrop main interface showing countdown list">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="showcase-grid">
+            <div class="showcase-item fade-in-up">
                 <div class="phone-mockup">
                     <div class="phone-frame">
                         <div class="app-screen">
-                            <img src="./assets/detail_beach.png" alt="DayDrop event detail with AI background" style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
+                            <img src="./assets/detail_beach.png" alt="DayDrop event detail with beautiful AI background">
                         </div>
                     </div>
                 </div>
                 <div class="showcase-content">
                     <h2>AI-Generated Backgrounds</h2>
                     <p>Describe your event and get a stunning AI-generated background. Beach vacation? Sun-drenched shores. Wedding day? Elegant florals. Your countdowns become works of art.</p>
+
+                    <div class="feature-highlight">
+                        <h4>Smart Image Generation</h4>
+                        <p>Our AI understands context - "graduation" gets caps and gowns, "concert" gets stage lights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="widget-gallery">
+        <div class="container">
+            <div class="fade-in-up" style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: clamp(32px, 6vw, 56px); font-weight: 700; margin-bottom: 20px;">Widgets Everywhere</h2>
+                <p style="font-size: 20px; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Your countdowns follow you across every screen on iOS. Home Screen, Lock Screen, StandBy, Apple Watch - we've got you covered.</p>
+            </div>
+
+            <div class="widget-grid fade-in-up">
+                <div class="widget-card">
+                    <img src="./assets/widget_small.png" alt="Small widget on home screen">
+                    <h4>Home Screen Widgets</h4>
+                    <p>Beautiful widgets in small, medium, and large sizes. Show multiple events or focus on one.</p>
+                </div>
+                <div class="widget-card">
+                    <div style="width: 100%; height: 120px; background: linear-gradient(135deg, #1C1C1E, #2C2C2E); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: #007AFF; font-size: 24px;">🔒</span>
+                    </div>
+                    <h4>Lock Screen Widgets</h4>
+                    <p>Quick glance at your countdowns without unlocking your phone. Perfect for daily motivation.</p>
+                </div>
+                <div class="widget-card">
+                    <div style="width: 100%; height: 120px; background: linear-gradient(135deg, #1C1C1E, #2C2C2E); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: #007AFF; font-size: 24px;">⌚</span>
+                    </div>
+                    <h4>Apple Watch</h4>
+                    <p>Your most important countdowns on your wrist. Complications and standalone watch app.</p>
+                </div>
+                <div class="widget-card">
+                    <div style="width: 100%; height: 120px; background: linear-gradient(135deg, #1C1C1E, #2C2C2E); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: #007AFF; font-size: 24px;">📱</span>
+                    </div>
+                    <h4>StandBy Mode</h4>
+                    <p>Turn your charging iPhone into a beautiful countdown display for your desk or nightstand.</p>
                 </div>
             </div>
         </div>
@@ -452,27 +778,41 @@
 
     <section class="features">
         <div class="container">
-            <h2 style="text-align: center; font-size: clamp(28px, 6vw, 48px); font-weight: 700; margin-bottom: 20px;">Everything You Need</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">📱</div>
-                    <h3>Widgets Everywhere</h3>
-                    <p>Home Screen, Lock Screen, StandBy, Apple Watch. Your countdowns follow you everywhere on iOS.</p>
-                </div>
+            <div class="fade-in-up" style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: clamp(32px, 6vw, 56px); font-weight: 700; margin-bottom: 20px;">Everything You Need</h2>
+                <p style="font-size: 20px; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Built for iOS 17 with the latest Apple technologies. No compromises on performance or beauty.</p>
+            </div>
+
+            <div class="features-grid fade-in-up">
                 <div class="feature">
                     <div class="feature-icon">🎨</div>
                     <h3>AI Backgrounds</h3>
-                    <p>Stunning AI-generated backgrounds that match your event perfectly. Just describe it and watch the magic happen.</p>
+                    <p>Stunning AI-generated backgrounds that match your event perfectly. Just describe it and watch the magic happen. Powered by advanced image generation.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">⚡</div>
                     <h3>Live Activities</h3>
-                    <p>Dynamic Island integration shows your countdowns without unlocking your phone. The future of iOS experiences.</p>
+                    <p>Dynamic Island integration shows your countdowns without unlocking your phone. The future of iOS experiences, available today.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">📸</div>
                     <h3>Share Cards</h3>
-                    <p>Beautiful shareable countdown cards for social media. Get your friends excited about your big moments.</p>
+                    <p>Beautiful shareable countdown cards for social media. Get your friends excited about your big moments with stunning visuals.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h3>iCloud Sync</h3>
+                    <p>Your countdowns sync seamlessly across all your Apple devices. Start on iPhone, continue on iPad, check on Apple Watch.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Smart Notifications</h3>
+                    <p>Intelligent reminders that adapt to your schedule. Get notified at the perfect moment, not when you're busy.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎊</div>
+                    <h3>Celebration Mode</h3>
+                    <p>When your countdown reaches zero, celebrate with beautiful confetti animations and special milestone badges.</p>
                 </div>
             </div>
         </div>
@@ -480,8 +820,12 @@
 
     <section class="pricing">
         <div class="container">
-            <h2>Simple, Transparent Pricing</h2>
-            <div class="pricing-cards">
+            <div class="fade-in-up">
+                <h2>Simple, Transparent Pricing</h2>
+                <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 0;">Start free, upgrade when you want more power</p>
+            </div>
+
+            <div class="pricing-cards fade-in-up">
                 <div class="pricing-card">
                     <h3>Free</h3>
                     <div class="price">$0</div>
@@ -490,27 +834,30 @@
                         <li>Basic widgets</li>
                         <li>Photo library backgrounds</li>
                         <li>Simple notifications</li>
+                        <li>Share cards (with watermark)</li>
                     </ul>
                 </div>
                 <div class="pricing-card featured">
                     <h3>Premium</h3>
-                    <div class="price">$1.99<span style="font-size: 16px; color: #8E8E93;">/month</span></div>
+                    <div class="price">$1.99<span style="font-size: 16px; color: #8E8E93; font-weight: 400;">/month</span></div>
                     <ul class="features-list">
                         <li>AI-generated backgrounds</li>
                         <li>Live Activities & Dynamic Island</li>
-                        <li>All widget styles</li>
-                        <li>Share countdown cards</li>
-                        <li>iCloud sync</li>
+                        <li>All widget styles & sizes</li>
+                        <li>Premium share cards</li>
+                        <li>iCloud sync across devices</li>
+                        <li>Priority support</li>
                     </ul>
                 </div>
                 <div class="pricing-card">
                     <h3>Lifetime</h3>
-                    <div class="price">$24.99<span style="font-size: 16px; color: #8E8E93;">/once</span></div>
+                    <div class="price">$24.99<span style="font-size: 16px; color: #8E8E93; font-weight: 400;">/once</span></div>
                     <ul class="features-list">
                         <li>Everything in Premium</li>
                         <li>Pay once, own forever</li>
                         <li>No recurring charges</li>
                         <li>Future updates included</li>
+                        <li>Support indie development</li>
                     </ul>
                 </div>
             </div>
@@ -519,23 +866,11 @@
 
     <section class="cta">
         <div class="container">
-            <h2>Turn Every Moment Into Motivation</h2>
-            <p>Download DayDrop: Countdowns and never miss what matters most</p>
-            <div style="margin-top: 40px;">
-                <a href="https://apps.apple.com/app/id6759470132" style="
-                    background: linear-gradient(45deg, #007AFF, #5AC8FA);
-                    color: #fff;
-                    padding: 16px 32px;
-                    border-radius: 30px;
-                    text-decoration: none;
-                    font-weight: 600;
-                    font-size: 18px;
-                    display: inline-block;
-                    transition: transform 0.2s ease;
-                    box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
-                "
-                onmouseover="this.style.transform='scale(1.05)'"
-                onmouseout="this.style.transform='scale(1)'">
+            <div class="cta-content fade-in-up">
+                <h2>Turn Every Moment Into Motivation</h2>
+                <p>Download DayDrop: Countdowns and never miss what matters most. Join thousands of users who've made their biggest moments unforgettable.</p>
+
+                <a href="https://apps.apple.com/app/id6759470132" class="cta-button">
                     📱 Download on App Store
                 </a>
             </div>
@@ -543,7 +878,7 @@
     </section>
 
     <footer>
-        <div class="container">
+        <div class="container fade-in-up">
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
@@ -554,5 +889,81 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Scroll animations and parallax effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+            const parallaxElements = document.querySelectorAll('.parallax');
+
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+
+                if (scrolled > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                // Parallax effect for hero elements
+                const heroElements = document.querySelectorAll('.hero .parallax');
+                heroElements.forEach((element, index) => {
+                    const speed = 0.5 + (index * 0.1);
+                    const yPos = -(scrolled * speed);
+                    element.style.transform = `translateY(${yPos}px)`;
+                });
+
+                // Parallax effect for floating widgets
+                const floatingWidgets = document.querySelectorAll('.floating-widget');
+                floatingWidgets.forEach((widget, index) => {
+                    const speed = 0.3 + (index * 0.1);
+                    const yPos = scrolled * speed;
+                    widget.style.transform = `translateY(${yPos}px) rotate(${yPos * 0.02}deg)`;
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Video lazy loading and autoplay handling
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.addEventListener('loadeddata', function() {
+                    this.classList.add('loaded');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -173,6 +173,30 @@
             color: #8E8E93;
             font-size: 14px;
             position: relative;
+            padding: 20px;
+        }
+
+        .countdown-card {
+            background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 240px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .live-activity {
+            background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
+            border-radius: 20px;
+            padding: 12px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         /* Features Grid */
@@ -393,9 +417,17 @@
                 <div class="phone-mockup">
                     <div class="phone-frame">
                         <div class="app-screen">
-                            <div style="color: #007AFF; font-size: 16px; font-weight: 600; margin-bottom: 10px;">🏖️ Beach Vacation</div>
-                            <div style="font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 10px;">23 Days</div>
-                            <div style="color: #8E8E93;">Live Activity Demo</div>
+                            <div class="live-activity">
+                                <div style="color: #007AFF; font-size: 12px;">🏖️</div>
+                                <div style="color: #fff; font-size: 14px; font-weight: 600; flex: 1;">Beach Vacation</div>
+                                <div style="color: #007AFF; font-size: 14px; font-weight: 700;">23d</div>
+                            </div>
+                            <div class="countdown-card">
+                                <div style="color: #007AFF; font-size: 14px; font-weight: 600; margin-bottom: 8px;">🏖️ Beach Vacation</div>
+                                <div style="font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 4px;">23</div>
+                                <div style="font-size: 16px; color: #8E8E93; font-weight: 600;">DAYS</div>
+                                <div style="font-size: 12px; color: #48484A; margin-top: 8px;">Dynamic Island + Widget</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -405,9 +437,12 @@
                 <div class="phone-mockup">
                     <div class="phone-frame">
                         <div class="app-screen">
-                            <div style="color: #FF3B30; font-size: 16px; font-weight: 600; margin-bottom: 10px;">🎂 Sarah's Birthday</div>
-                            <div style="font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 10px;">7 Days</div>
-                            <div style="color: #8E8E93;">AI Background Demo</div>
+                            <div class="countdown-card">
+                                <div style="color: #FF3B30; font-size: 14px; font-weight: 600; margin-bottom: 8px;">🎂 Sarah's Birthday</div>
+                                <div style="font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 4px;">7</div>
+                                <div style="font-size: 16px; color: #8E8E93; font-weight: 600;">DAYS</div>
+                                <div style="font-size: 11px; color: #48484A; margin-top: 8px; padding: 4px 8px; background: rgba(255, 59, 48, 0.1); border-radius: 8px;">✨ AI Background</div>
+                            </div>
                         </div>
                     </div>
                 </div>

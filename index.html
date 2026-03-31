@@ -45,12 +45,12 @@
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.8",
-            "ratingCount": "5"
+            "ratingCount": "12"
         },
         "description": "DayDrop is the only countdown app for iOS with Dynamic Island Live Activities, AI-generated backgrounds, 6 widget families (Home Screen, Lock Screen, StandBy, Apple Watch), and support for 11 languages. Import birthdays from Contacts, share countdown cards, and celebrate milestones with confetti.",
         "screenshot": "https://daydrop.beatroot.dev/assets/event_list.png",
         "featureList": "Dynamic Island Live Activities, AI-Generated Backgrounds, Home Screen Widgets, Lock Screen Widgets, StandBy Widgets, Apple Watch App, Import Birthdays from Contacts, Share Cards, 11 Languages, iCloud Sync, Smart Notifications, Badge Countdown",
-        "softwareVersion": "1.1",
+        "softwareVersion": "1.2",
         "author": {
             "@type": "Organization",
             "name": "Beatroot Dev"
@@ -97,6 +97,42 @@
                     "@type": "Answer",
                     "text": "Yes, DayDrop is free to download with unlimited countdowns, basic widgets, and photo library backgrounds. Premium features (AI backgrounds, Live Activities, all widget styles, share cards, iCloud sync) are available for $1.99/month, $12.99/year, or $24.99 lifetime."
                 }
+            }
+        ]
+    }
+    </script>
+
+    <!-- HowTo Schema for Widget Setup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Add a Countdown Widget to Your iPhone Home Screen",
+        "description": "Step-by-step guide to adding a DayDrop countdown widget to your iPhone Home Screen, Lock Screen, or StandBy mode.",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Download DayDrop",
+                "text": "Download DayDrop free from the App Store and create your first countdown event."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Long-press your Home Screen",
+                "text": "Long-press on any empty area of your iPhone Home Screen until the apps start jiggling."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Tap the + button",
+                "text": "Tap the + button in the top-left corner, search for DayDrop, and choose Small, Medium, or Large widget."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Choose your event",
+                "text": "Your pinned event appears automatically. Or long-press the widget to choose a specific countdown event."
             }
         ]
     }
@@ -278,8 +314,8 @@
         /* Pricing */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px; max-width: 900px; margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px; max-width: 1000px; margin: 0 auto;
         }
 
         .price-card {
@@ -413,6 +449,10 @@
         <h1>Never Miss What<br>Matters Most</h1>
         <p>The only countdown app with Dynamic Island, AI backgrounds, widgets everywhere, and Apple Watch. Free on iOS.</p>
 
+        <a href="https://apps.apple.com/app/id6759470132" style="display:inline-block;margin-bottom:24px;">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download DayDrop countdown app on the App Store" style="height:54px;">
+        </a>
+
         <div class="hero-video">
             <video autoplay muted loop playsinline>
                 <source src="./assets/preview_final.mp4" type="video/mp4">
@@ -439,7 +479,7 @@
                 <p>Organize with categories, pin your most important events, set up recurring annual dates, and count up from past milestones like anniversaries.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/event_list.png" alt="DayDrop countdown app showing event list with beautiful cards" loading="lazy">
+                <img src="./assets/event_list.png" alt="Best countdown app for iPhone 2026 — DayDrop event list with birthday, wedding, and vacation countdowns" loading="lazy">
             </div>
         </div>
 
@@ -451,7 +491,7 @@
                 <p>No stock photos. No searching. Just type and watch the magic happen. Works in all 11 supported languages.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/detail_wedding.png" alt="DayDrop AI-generated wedding countdown background" loading="lazy">
+                <img src="./assets/detail_wedding.png" alt="AI-generated wedding countdown background — DayDrop creates unique photos for every event" loading="lazy">
             </div>
         </div>
 
@@ -463,19 +503,19 @@
                 <p>Every widget updates automatically. Pin your most important event and it follows you everywhere.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/widget_medium.png" alt="DayDrop countdown widgets on iPhone home screen" loading="lazy">
+                <img src="./assets/widget_medium.png" alt="Countdown widget for iPhone home screen and lock screen — DayDrop widget families in small, medium, and large sizes" loading="lazy">
             </div>
         </div>
 
         <div class="feature-row reverse">
             <div class="feature-text">
-                <span class="feature-tag">NEW IN 1.1</span>
+                <span class="feature-tag">NEW IN 1.2</span>
                 <h2>Import Birthdays from Contacts</h2>
                 <p>Tap + and import birthdays directly from your iPhone Contacts. DayDrop creates recurring countdown events for each birthday automatically — no typing required.</p>
                 <p>Duplicates are detected so you never import the same birthday twice. Each imported birthday gets a beautiful gradient background.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/create_event.png" alt="DayDrop create event and import birthdays interface" loading="lazy">
+                <img src="./assets/create_event.png" alt="Import birthdays from iPhone contacts into countdown app — DayDrop automatic birthday reminders" loading="lazy">
             </div>
         </div>
     </div>
@@ -562,18 +602,26 @@
                     <li>Import birthdays</li>
                 </ul>
             </div>
-            <div class="price-card featured">
-                <h3>Premium</h3>
+            <div class="price-card">
+                <h3>Monthly</h3>
                 <div class="price-amount">$1.99<span>/month</span></div>
                 <ul class="price-list">
                     <li>AI-generated backgrounds</li>
                     <li>Dynamic Island Live Activities</li>
                     <li>All 6 widget families</li>
-                    <li>All 3 widget styles</li>
                     <li>Premium share cards</li>
-                    <li>Milestone notifications</li>
                     <li>iCloud sync</li>
                     <li>Badge countdown</li>
+                </ul>
+            </div>
+            <div class="price-card featured">
+                <h3>Annual</h3>
+                <div class="price-amount">$12.99<span>/year</span></div>
+                <ul class="price-list">
+                    <li>Everything in Monthly</li>
+                    <li>1 month free trial</li>
+                    <li>Save 46% vs monthly</li>
+                    <li>Best value</li>
                 </ul>
             </div>
             <div class="price-card">

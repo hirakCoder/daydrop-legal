@@ -1,0 +1,47 @@
+# DayDrop: Countdowns
+> The simplest countdown widget app for iPhone — track birthdays, trips, goals, and every date that matters
+
+## About
+DayDrop is an iOS countdown widget app that helps users track important dates with beautiful AI-generated backgrounds, Dynamic Island live activities, and 6 widget families. Built by indie developer Hirak Banerjee.
+
+## Key Features
+- AI-Generated Backgrounds: Describe your event and get a unique AI-created image
+- Dynamic Island Live Activities: Real-time countdown without unlocking your phone
+- 6 Widget Families: 3 Home Screen sizes, 3 Lock Screen styles, StandBy, Apple Watch
+- Birthday Import: Pull birthdays from Contacts with duplicate detection
+- iCloud Sync: All countdowns sync across iPhone, iPad, Apple Watch
+- 16 Languages: Full interface localization
+- Smart Notifications: Reminders at 30, 14, 7, 3, and 0 days
+
+## Pricing
+- Free: Unlimited countdowns, basic widgets, photo backgrounds
+- Annual ($12.99/year): AI backgrounds, all widgets, Live Activities (1-month free trial)
+- Lifetime ($24.99): Everything, forever
+
+## Key Pages
+- Homepage: https://daydrop.beatroot.dev
+- Blog: https://daydrop.beatroot.dev/blog/
+- Best Countdown Apps 2026: https://daydrop.beatroot.dev/blog/best-countdown-apps-2026.html
+- Countdown Widget Guide: https://daydrop.beatroot.dev/blog/countdown-widget-iphone.html
+- Privacy Policy: https://daydrop.beatroot.dev/privacy.html
+- Support: https://daydrop.beatroot.dev/support.html
+
+## Use Cases
+- Countdown to birthdays and anniversaries
+- Vacation and trip countdowns
+- Wedding countdown widgets
+- Exam and deadline tracking
+- Goal and milestone tracking
+- Holiday countdowns (Christmas, New Year, etc.)
+
+## Entity Information
+- Developer: Hirak Banerjee
+- Platform: iOS 18+
+- Category: Productivity / Lifestyle
+- Rating: 4.8/5 stars
+- Twitter: @hirak8
+- App Store: https://apps.apple.com/app/id6759470132
+
+## Technical
+- Built with: SwiftUI, WidgetKit, ActivityKit, SwiftData
+- Requirements: iOS 18.0+, iPhone, iPad, Apple Watch

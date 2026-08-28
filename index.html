@@ -412,8 +412,9 @@
         .feature-img { text-align: center; }
         .feature-img img {
             max-width: 272px; width: 100%; height: auto;
-            border-radius: 28px;
-            box-shadow: 0 24px 60px rgba(29,29,31,0.14), 0 4px 16px rgba(29,29,31,0.08);
+            /* Images carry their own device frame with transparent corners —
+               drop-shadow follows the alpha, box-shadow would draw a rectangle. */
+            filter: drop-shadow(0 20px 44px rgba(29,29,31,0.20));
         }
 
         /* Quiet capability list — hairline top borders, no boxes. */
@@ -661,7 +662,7 @@
         </div>
 
         <div class="hero-video">
-            <video autoplay muted loop playsinline poster="./assets/preview_poster.webp" width="720" height="1280">
+            <video autoplay muted loop playsinline poster="./assets/poster2.webp" width="720" height="1280">
                 <source src="./assets/preview_720.mp4" type="video/mp4">
             </video>
         </div>
@@ -708,7 +709,7 @@
                 <p>Organize with categories, pin your most important events, set up recurring annual dates, and count up from past milestones like anniversaries.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/event_list.webp" width="640" height="1392" alt="Best countdown app for iPhone 2026 — DayDrop event list with birthday, wedding, and vacation countdowns" loading="lazy">
+                <img src="./assets/f_event_list.webp" width="816" height="1762" alt="Best countdown app for iPhone 2026 — DayDrop event list with birthday, wedding, and vacation countdowns" loading="lazy">
             </div>
         </div>
 
@@ -720,7 +721,7 @@
                 <p>No stock photos. No searching. Your AI backgrounds sync to your Apple Watch too — tap any countdown on your wrist to see it in full color. Works across 16 supported languages.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/detail_wedding.webp" width="640" height="1392" alt="AI-generated wedding countdown background — DayDrop creates unique photos for every event" loading="lazy">
+                <img src="./assets/f_detail_beach.webp" width="816" height="1762" alt="AI-generated wedding countdown background — DayDrop creates unique photos for every event" loading="lazy">
             </div>
         </div>
 
@@ -732,19 +733,19 @@
                 <p>Every widget updates automatically. Pin your most important event and it follows you everywhere — iPhone, iPad, Apple Watch.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/widget_medium.webp" width="640" height="1392" alt="Countdown widget for iPhone home screen and lock screen — DayDrop widget families in small, medium, and large sizes" loading="lazy">
+                <img src="./assets/f_widget_medium.webp" width="816" height="1762" alt="Countdown widget for iPhone home screen and lock screen — DayDrop widget families in small, medium, and large sizes" loading="lazy">
             </div>
         </div>
 
         <div class="feature-row reverse">
             <div class="feature-text">
-                <p class="section-eyebrow">Personalization</p>
-                <h2>Five themes. Your numbers. Smarter AI.</h2>
-                <p>Drift, Bloom, Mono, Neon, and Velvet restyle every surface at once — app, widgets, Lock Screen, and Dynamic Island. Each theme pairs a font design with a palette so the countdown stays unmistakably yours.</p>
+                <p class="section-eyebrow">Effortless</p>
+                <h2>Create in seconds. AI does the rest.</h2>
+                <p>Name the event, pick a date, done. DayDrop generates a fitting background on the spot, and five themes — Drift, Bloom, Mono, Neon, Velvet — restyle every surface at once: app, widgets, Lock Screen, and Dynamic Island.</p>
                 <p>Pick the Number Size you actually want (S to XL). Reposition &amp; crop photos with live widget previews. AI mood chips and a free-text prompt feed a generation pipeline that understands your event — not generic stock.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/customize.webp" width="640" height="1392" alt="DayDrop customize screen — 5 themes, number size, AI mood chips, reposition and crop" loading="lazy">
+                <img src="./assets/f_create_event.webp" width="816" height="1762" alt="Create a countdown in seconds — DayDrop new event screen with AI-generated background" loading="lazy">
             </div>
         </div>
 
@@ -756,7 +757,7 @@
                 <p>Live Activity progress ring on Dynamic Island and Lock Screen. Multi-event widget with progress bars. Countdown to the exact moment — hours, minutes, seconds.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/widget_small.webp" width="640" height="1391" alt="Apple Watch countdown app with AI-generated event background — DayDrop Watch AI sync" loading="lazy">
+                <img src="./assets/f_widget_small.webp" width="816" height="1762" alt="Apple Watch countdown app with AI-generated event background — DayDrop Watch AI sync" loading="lazy">
             </div>
         </div>
 
@@ -768,7 +769,7 @@
                 <p>Duplicates are detected so you never import the same birthday twice. Each imported birthday gets a beautiful gradient background.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/detail_birthday.webp" width="640" height="1391" alt="Import birthdays from iPhone contacts into countdown app — DayDrop automatic birthday reminders" loading="lazy">
+                <img src="./assets/f_detail_birthday.webp" width="816" height="1762" alt="Import birthdays from iPhone contacts into countdown app — DayDrop automatic birthday reminders" loading="lazy">
             </div>
         </div>
     </div>

@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DayDrop — Countdown Widget App for iPhone, iPad & Apple Watch | AI Backgrounds + Dynamic Island</title>
-    <meta name="description" content="DayDrop is the only iOS countdown app with AI-generated event backgrounds that sync to Apple Watch, Dynamic Island Live Activities with progress ring, 5 themes, 10 widget placements, countdown to the exact moment, full iPad + Apple Watch support, and 16 languages. v1.7 adds shareable countdown cards and milestone celebrations. Free on the App Store.">
+    <!-- Title ≤60 chars so the differentiator survives SERP truncation; the old 96-char
+         version cut off exactly at "AI Backgrounds". -->
+    <title>DayDrop — Countdown Widget with AI Backgrounds for iPhone</title>
+    <meta name="description" content="Free countdown app for iPhone with AI-generated backgrounds, Dynamic Island Live Activities, and widgets for Home Screen, Lock Screen, StandBy, Apple Watch & iPad.">
     <meta name="keywords" content="countdown app, countdown widget, iOS countdown, day counter, countdown timer, birthday countdown, wedding countdown, vacation countdown, Live Activity, Dynamic Island, AI backgrounds, Apple Watch countdown, iPad countdown, multi-event widget">
     <link rel="canonical" href="https://daydrop.beatroot.dev/">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -16,14 +18,14 @@
     <meta property="og:description" content="AI backgrounds, 5 themes, Dynamic Island progress ring, Number Size control, 10 widget placements, exact-time countdowns, 16 languages. v1.7 out now. Free on the App Store.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://daydrop.beatroot.dev/">
-    <meta property="og:image" content="https://daydrop.beatroot.dev/assets/AppIcon.png">
+    <meta property="og:image" content="https://daydrop.beatroot.dev/assets/AppIcon-og.png">
     <meta property="og:site_name" content="DayDrop">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="DayDrop — Countdown App for iOS">
     <meta name="twitter:description" content="AI backgrounds, 5 themes, Dynamic Island, widgets everywhere. The countdown app your Home Screen was missing.">
-    <meta name="twitter:image" content="https://daydrop.beatroot.dev/assets/AppIcon.png">
+    <meta name="twitter:image" content="https://daydrop.beatroot.dev/assets/AppIcon-og.png">
 
     <!-- Apple Smart App Banner -->
     <meta name="apple-itunes-app" content="app-id=6759470132">
@@ -35,7 +37,7 @@
         "@type": "SoftwareApplication",
         "name": "DayDrop - Countdown Widget",
         "operatingSystem": "iOS 18.0+",
-        "dateModified": "2026-08-26",
+        "dateModified": "2026-08-27",
         "applicationCategory": "UtilitiesApplication",
         "applicationSubCategory": "Productivity",
         "offers": {
@@ -526,6 +528,35 @@
             margin-top: 16px; font-size: 13px; color: #48484A;
         }
 
+        /* Sticky install bar — mobile only, appears after the hero scrolls away so the
+           primary CTA is always one tap away without covering the hero's own CTA. */
+        .sticky-cta {
+            position: fixed; left: 0; right: 0; bottom: 0; z-index: 200;
+            display: none;
+            align-items: center; gap: 12px;
+            padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+            background: rgba(18,18,20,0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            transform: translateY(110%);
+            transition: transform 0.25s ease;
+        }
+        .sticky-cta.visible { transform: translateY(0); }
+        .sticky-cta img { width: 40px; height: 40px; border-radius: 10px; }
+        .sticky-cta .sticky-meta { flex: 1; min-width: 0; }
+        .sticky-cta .sticky-title { font-size: 15px; font-weight: 600; }
+        .sticky-cta .sticky-sub { font-size: 12px; color: var(--text-secondary); }
+        .sticky-cta .sticky-btn {
+            background: var(--blue); color: #fff; text-decoration: none;
+            font-size: 15px; font-weight: 600;
+            padding: 10px 22px; border-radius: 20px; white-space: nowrap;
+        }
+        @media (max-width: 768px) {
+            .sticky-cta { display: flex; }
+            footer { padding-bottom: 100px; } /* keep footer links tappable above the bar */
+        }
+
         /* Footer */
         footer {
             padding: 40px 0 28px; text-align: center;
@@ -590,7 +621,7 @@
     <div class="container">
         <div class="header-inner">
             <a href="/" class="logo">
-                <img src="./assets/AppIcon.png" alt="DayDrop icon">
+                <img src="./assets/appicon-128.webp" alt="DayDrop icon" width="32" height="32">
                 DayDrop
             </a>
             <!-- CTAs route through /get (daydrop-links Worker) so web installs get their own
@@ -606,22 +637,21 @@
         <h1>Countdown Widget App<br>for iPhone</h1>
         <p>DayDrop is the simplest iOS countdown widget app with AI-generated backgrounds, Dynamic Island live activities, and beautiful home screen widgets. Never miss a birthday, trip, or milestone.</p>
 
+        <!-- Social proof sits between headline and CTA — the decision point — not below the video. -->
+        <p class="hero-rating" style="margin:0 0 16px;font-size:0.95rem;opacity:0.85;">
+            <span aria-hidden="true">★★★★★</span>
+            <strong>4.7</strong> from 67 ratings worldwide · Free · No account needed
+        </p>
+
         <a href="/get" style="display:inline-block;margin-bottom:24px;">
-            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download DayDrop countdown app on the App Store" style="height:54px;">
+            <img src="./assets/appstore-badge.svg" alt="Download DayDrop countdown app on the App Store" width="162" height="54" style="height:54px;width:auto;">
         </a>
 
         <div class="hero-video">
-            <video autoplay muted loop playsinline>
-                <source src="./assets/preview_final.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline poster="./assets/preview_poster.webp" width="720" height="1280">
+                <source src="./assets/preview_720.mp4" type="video/mp4">
             </video>
         </div>
-
-        <!-- Social proof. Previously only in JSON-LD — visible to crawlers, invisible to the
-             human deciding whether to tap Download. -->
-        <p class="hero-rating" style="margin:0 0 20px;font-size:0.95rem;opacity:0.85;">
-            <span aria-hidden="true">★★★★★</span>
-            <strong>4.7</strong> from 67 ratings worldwide · Free on the App Store
-        </p>
 
         <div class="badge-row">
             <span class="badge">5 Themes</span>
@@ -645,7 +675,7 @@
                 <p>Organize with categories, pin your most important events, set up recurring annual dates, and count up from past milestones like anniversaries.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/event_list.png" alt="Best countdown app for iPhone 2026 — DayDrop event list with birthday, wedding, and vacation countdowns" loading="lazy">
+                <img src="./assets/event_list.webp" width="640" height="1392" alt="Best countdown app for iPhone 2026 — DayDrop event list with birthday, wedding, and vacation countdowns" loading="lazy">
             </div>
         </div>
 
@@ -657,7 +687,7 @@
                 <p>No stock photos. No searching. Just type and watch the magic happen. Your AI backgrounds sync to your Apple Watch too — tap any countdown on your wrist to see it in full color. Works across 16 supported languages.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/detail_wedding.png" alt="AI-generated wedding countdown background — DayDrop creates unique photos for every event" loading="lazy">
+                <img src="./assets/detail_wedding.webp" width="640" height="1392" alt="AI-generated wedding countdown background — DayDrop creates unique photos for every event" loading="lazy">
             </div>
         </div>
 
@@ -669,7 +699,7 @@
                 <p>Every widget updates automatically. Pin your most important event and it follows you everywhere — iPhone, iPad, Apple Watch.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/widget_medium.png" alt="Countdown widget for iPhone home screen and lock screen — DayDrop widget families in small, medium, and large sizes" loading="lazy">
+                <img src="./assets/widget_medium.webp" width="640" height="1392" alt="Countdown widget for iPhone home screen and lock screen — DayDrop widget families in small, medium, and large sizes" loading="lazy">
             </div>
         </div>
 
@@ -681,7 +711,7 @@
                 <p>Pick the Number Size you actually want (S/M/L/XL). Reposition &amp; Crop your photos with live home-card and widget previews so what you see is what ships. AI Mood chips (Auto, Dreamy, Neon, Nature, Minimal, Warm) plus a free-text Custom prompt now feed a smarter generation pipeline that understands your event title and produces relevant imagery — not generic stock.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/customize.png" alt="DayDrop customize screen — 5 themes, number size, AI mood chips, reposition and crop" loading="lazy">
+                <img src="./assets/customize.webp" width="640" height="1392" alt="DayDrop customize screen — 5 themes, number size, AI mood chips, reposition and crop" loading="lazy">
             </div>
         </div>
 
@@ -693,7 +723,7 @@
                 <p>Live Activity progress ring on Dynamic Island and Lock Screen. Multi-event widget with progress bars. Countdown to the exact moment (hours, minutes, seconds). Full-screen event detail.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/widget_small.png" alt="Apple Watch countdown app with AI-generated event background — DayDrop Watch AI sync" loading="lazy">
+                <img src="./assets/widget_small.webp" width="640" height="1391" alt="Apple Watch countdown app with AI-generated event background — DayDrop Watch AI sync" loading="lazy">
             </div>
         </div>
 
@@ -705,7 +735,7 @@
                 <p>Duplicates are detected so you never import the same birthday twice. Each imported birthday gets a beautiful gradient background.</p>
             </div>
             <div class="feature-img">
-                <img src="./assets/detail_birthday.png" alt="Import birthdays from iPhone contacts into countdown app — DayDrop automatic birthday reminders" loading="lazy">
+                <img src="./assets/detail_birthday.webp" width="640" height="1391" alt="Import birthdays from iPhone contacts into countdown app — DayDrop automatic birthday reminders" loading="lazy">
             </div>
         </div>
     </div>
@@ -1050,6 +1080,28 @@
         </div>
     </div>
 </footer>
+
+<!-- Sticky install bar (mobile). ct=web_home via /get like every other CTA. -->
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <img src="./assets/appicon-128.webp" alt="" width="40" height="40">
+    <div class="sticky-meta">
+        <div class="sticky-title">DayDrop</div>
+        <div class="sticky-sub">★ 4.7 · Free countdown widgets</div>
+    </div>
+    <a href="/get" class="sticky-btn">Get</a>
+</div>
+<script>
+(function () {
+    var bar = document.getElementById('stickyCta');
+    var hero = document.querySelector('.hero');
+    if (!bar || !hero || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (entries) {
+        var past = !entries[0].isIntersecting;
+        bar.classList.toggle('visible', past);
+        bar.setAttribute('aria-hidden', String(!past));
+    }, { threshold: 0 }).observe(hero);
+})();
+</script>
 
 </body>
 </html>

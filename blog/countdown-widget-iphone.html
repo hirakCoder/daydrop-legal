@@ -49,23 +49,27 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; background: #000; color: #fff; line-height: 1.7; }
-        .article { max-width: 720px; margin: 0 auto; padding: 80px 20px 60px; }
-        .back { color: #007AFF; text-decoration: none; font-size: 15px; display: inline-block; margin-bottom: 32px; }
-        h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
-        .meta { color: #8E8E93; font-size: 14px; margin-bottom: 40px; }
-        h2 { font-size: 24px; font-weight: 600; margin: 40px 0 16px; }
-        h3 { font-size: 20px; font-weight: 600; margin: 32px 0 12px; }
-        p { font-size: 17px; color: #d1d1d6; margin-bottom: 16px; }
-        ol, ul { margin: 0 0 16px 24px; color: #d1d1d6; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            background: #FBFBF9; color: #1D1D1F; line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .article { max-width: 720px; margin: 0 auto; padding: 88px 24px 60px; }
+        .back { color: #0063D6; text-decoration: none; font-size: 15px; display: inline-block; margin-bottom: 36px; }
+        h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 650; letter-spacing: -0.025em; margin-bottom: 16px; line-height: 1.15; text-wrap: balance; }
+        .meta { color: #71717A; font-size: 14px; margin-bottom: 40px; }
+        h2 { font-size: 24px; font-weight: 650; letter-spacing: -0.015em; margin: 44px 0 16px; }
+        h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 32px 0 12px; }
+        p { font-size: 17px; color: #3E3E43; margin-bottom: 16px; }
+        ol, ul { margin: 0 0 16px 24px; color: #3E3E43; }
         li { margin-bottom: 8px; font-size: 16px; }
-        a { color: #007AFF; }
-        .step { background: #1C1C1E; padding: 20px 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); margin: 16px 0; }
-        .step-num { color: #007AFF; font-weight: 700; font-size: 14px; margin-bottom: 8px; }
-        .cta-box { background: #1C1C1E; padding: 24px; border-radius: 16px; text-align: center; margin: 40px 0; border: 1px solid rgba(255,255,255,0.1); }
-        .cta-box a { background: #007AFF; color: #fff; padding: 12px 24px; border-radius: 20px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 12px; }
-        .footer-blog { text-align: center; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px; }
-        .footer-blog a { color: #8E8E93; text-decoration: none; margin: 0 16px; font-size: 14px; }
+        a { color: #0063D6; }
+        .step { border: 1px solid #E5E5E1; background: #fff; padding: 20px 24px; border-radius: 16px; margin: 16px 0; }
+        .step-num { color: #71717A; font-weight: 600; font-size: 12px; letter-spacing: 0.1em; margin-bottom: 8px; }
+        .cta-box { border: 1px solid #E5E5E1; background: #F4F4F1; padding: 28px 24px; border-radius: 16px; text-align: center; margin: 40px 0; }
+        .cta-box a { background: #0A7AFF; color: #fff; padding: 12px 28px; border-radius: 100px; text-decoration: none; font-weight: 500; display: inline-block; margin-top: 12px; }
+        .footer-blog { text-align: center; padding: 40px 0; border-top: 1px solid #E5E5E1; margin-top: 60px; }
+        .footer-blog a { color: #71717A; text-decoration: none; margin: 0 16px; font-size: 14px; }
     </style>
 </head>
 <body>

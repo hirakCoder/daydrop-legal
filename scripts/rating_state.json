@@ -1,0 +1,498 @@
+{
+ "ae": {
+  "avg": 5,
+  "count": 1
+ },
+ "al": {
+  "avg": 0,
+  "count": 0
+ },
+ "am": {
+  "avg": 0,
+  "count": 0
+ },
+ "ao": {
+  "avg": 0,
+  "count": 0
+ },
+ "ar": {
+  "avg": 5,
+  "count": 1
+ },
+ "at": {
+  "avg": 0,
+  "count": 0
+ },
+ "au": {
+  "avg": 5,
+  "count": 1
+ },
+ "az": {
+  "avg": 0,
+  "count": 0
+ },
+ "ba": {
+  "avg": 0,
+  "count": 0
+ },
+ "bb": {
+  "avg": 0,
+  "count": 0
+ },
+ "bd": {
+  "avg": 0.0,
+  "count": 0
+ },
+ "be": {
+  "avg": 0,
+  "count": 0
+ },
+ "bg": {
+  "avg": 0,
+  "count": 0
+ },
+ "bh": {
+  "avg": 0,
+  "count": 0
+ },
+ "bn": {
+  "avg": 0,
+  "count": 0
+ },
+ "bo": {
+  "avg": 0,
+  "count": 0
+ },
+ "br": {
+  "avg": 4.5,
+  "count": 2
+ },
+ "bs": {
+  "avg": 0,
+  "count": 0
+ },
+ "bw": {
+  "avg": 0,
+  "count": 0
+ },
+ "by": {
+  "avg": 0,
+  "count": 0
+ },
+ "ca": {
+  "avg": 4.77778,
+  "count": 9
+ },
+ "cd": {
+  "avg": 0,
+  "count": 0
+ },
+ "ch": {
+  "avg": 0,
+  "count": 0
+ },
+ "ci": {
+  "avg": 0,
+  "count": 0
+ },
+ "cl": {
+  "avg": 5,
+  "count": 1
+ },
+ "cm": {
+  "avg": 0,
+  "count": 0
+ },
+ "cn": {
+  "avg": 0,
+  "count": 0
+ },
+ "co": {
+  "avg": 4,
+  "count": 1
+ },
+ "cr": {
+  "avg": 0,
+  "count": 0
+ },
+ "cz": {
+  "avg": 0,
+  "count": 0
+ },
+ "de": {
+  "avg": 4,
+  "count": 1
+ },
+ "dk": {
+  "avg": 5,
+  "count": 1
+ },
+ "do": {
+  "avg": 0,
+  "count": 0
+ },
+ "dz": {
+  "avg": 0,
+  "count": 0
+ },
+ "ec": {
+  "avg": 0,
+  "count": 0
+ },
+ "ee": {
+  "avg": 0,
+  "count": 0
+ },
+ "eg": {
+  "avg": 0,
+  "count": 0
+ },
+ "es": {
+  "avg": 5,
+  "count": 1
+ },
+ "fi": {
+  "avg": 4,
+  "count": 1
+ },
+ "fr": {
+  "avg": 5,
+  "count": 1
+ },
+ "gb": {
+  "avg": 2,
+  "count": 1
+ },
+ "ge": {
+  "avg": 0,
+  "count": 0
+ },
+ "gh": {
+  "avg": 0,
+  "count": 0
+ },
+ "gr": {
+  "avg": 5,
+  "count": 1
+ },
+ "gt": {
+  "avg": 5,
+  "count": 1
+ },
+ "hk": {
+  "avg": 0,
+  "count": 0
+ },
+ "hn": {
+  "avg": 0,
+  "count": 0
+ },
+ "hr": {
+  "avg": 0,
+  "count": 0
+ },
+ "hu": {
+  "avg": 0,
+  "count": 0
+ },
+ "id": {
+  "avg": 0,
+  "count": 0
+ },
+ "ie": {
+  "avg": 5,
+  "count": 1
+ },
+ "il": {
+  "avg": 0,
+  "count": 0
+ },
+ "in": {
+  "avg": 4.33333,
+  "count": 3
+ },
+ "is": {
+  "avg": 0,
+  "count": 0
+ },
+ "it": {
+  "avg": 0,
+  "count": 0
+ },
+ "jm": {
+  "avg": 0,
+  "count": 0
+ },
+ "jo": {
+  "avg": 0,
+  "count": 0
+ },
+ "jp": {
+  "avg": 4,
+  "count": 1
+ },
+ "ke": {
+  "avg": 5,
+  "count": 1
+ },
+ "kh": {
+  "avg": 5,
+  "count": 1
+ },
+ "kr": {
+  "avg": 5,
+  "count": 1
+ },
+ "kw": {
+  "avg": 0,
+  "count": 0
+ },
+ "kz": {
+  "avg": 0,
+  "count": 0
+ },
+ "la": {
+  "avg": 0,
+  "count": 0
+ },
+ "lb": {
+  "avg": 0,
+  "count": 0
+ },
+ "lk": {
+  "avg": 0,
+  "count": 0
+ },
+ "lt": {
+  "avg": 5,
+  "count": 1
+ },
+ "lu": {
+  "avg": 0,
+  "count": 0
+ },
+ "lv": {
+  "avg": 0,
+  "count": 0
+ },
+ "ly": {
+  "avg": 0,
+  "count": 0
+ },
+ "ma": {
+  "avg": 0,
+  "count": 0
+ },
+ "md": {
+  "avg": 0,
+  "count": 0
+ },
+ "me": {
+  "avg": 0,
+  "count": 0
+ },
+ "mg": {
+  "avg": 0,
+  "count": 0
+ },
+ "mk": {
+  "avg": 0,
+  "count": 0
+ },
+ "mm": {
+  "avg": 0,
+  "count": 0
+ },
+ "mn": {
+  "avg": 0,
+  "count": 0
+ },
+ "mu": {
+  "avg": 0,
+  "count": 0
+ },
+ "mx": {
+  "avg": 4.25,
+  "count": 4
+ },
+ "my": {
+  "avg": 4.5,
+  "count": 2
+ },
+ "mz": {
+  "avg": 0,
+  "count": 0
+ },
+ "na": {
+  "avg": 0,
+  "count": 0
+ },
+ "ng": {
+  "avg": 0,
+  "count": 0
+ },
+ "ni": {
+  "avg": 0,
+  "count": 0
+ },
+ "nl": {
+  "avg": 5,
+  "count": 1
+ },
+ "no": {
+  "avg": 0,
+  "count": 0
+ },
+ "np": {
+  "avg": 0,
+  "count": 0
+ },
+ "nz": {
+  "avg": 0,
+  "count": 0
+ },
+ "om": {
+  "avg": 0,
+  "count": 0
+ },
+ "pa": {
+  "avg": 0,
+  "count": 0
+ },
+ "pe": {
+  "avg": 0,
+  "count": 0
+ },
+ "ph": {
+  "avg": 3.66667,
+  "count": 3
+ },
+ "pk": {
+  "avg": 0,
+  "count": 0
+ },
+ "pl": {
+  "avg": 0,
+  "count": 0
+ },
+ "pt": {
+  "avg": 0,
+  "count": 0
+ },
+ "py": {
+  "avg": 0,
+  "count": 0
+ },
+ "qa": {
+  "avg": 0,
+  "count": 0
+ },
+ "ro": {
+  "avg": 0,
+  "count": 0
+ },
+ "rs": {
+  "avg": 0,
+  "count": 0
+ },
+ "ru": {
+  "avg": 0,
+  "count": 0
+ },
+ "rw": {
+  "avg": 0,
+  "count": 0
+ },
+ "sa": {
+  "avg": 0,
+  "count": 0
+ },
+ "se": {
+  "avg": 5,
+  "count": 2
+ },
+ "sg": {
+  "avg": 5,
+  "count": 3
+ },
+ "si": {
+  "avg": 0,
+  "count": 0
+ },
+ "sk": {
+  "avg": 0,
+  "count": 0
+ },
+ "sn": {
+  "avg": 0,
+  "count": 0
+ },
+ "sv": {
+  "avg": 0,
+  "count": 0
+ },
+ "th": {
+  "avg": 0,
+  "count": 0
+ },
+ "tn": {
+  "avg": 0,
+  "count": 0
+ },
+ "tr": {
+  "avg": 5,
+  "count": 1
+ },
+ "tt": {
+  "avg": 0,
+  "count": 0
+ },
+ "tw": {
+  "avg": 0,
+  "count": 0
+ },
+ "tz": {
+  "avg": 0,
+  "count": 0
+ },
+ "ua": {
+  "avg": 0,
+  "count": 0
+ },
+ "ug": {
+  "avg": 5,
+  "count": 1
+ },
+ "us": {
+  "avg": 4.77778,
+  "count": 18
+ },
+ "uy": {
+  "avg": 0,
+  "count": 0
+ },
+ "uz": {
+  "avg": 0,
+  "count": 0
+ },
+ "ve": {
+  "avg": 5,
+  "count": 1
+ },
+ "vn": {
+  "avg": 5,
+  "count": 1
+ },
+ "za": {
+  "avg": 5,
+  "count": 1
+ },
+ "zm": {
+  "avg": 0,
+  "count": 0
+ },
+ "zw": {
+  "avg": 0,
+  "count": 0
+ }
+}

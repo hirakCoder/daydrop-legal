@@ -364,7 +364,11 @@
         .feature-img { text-align: center; }
 
         .feature-img img {
-            max-width: 280px; width: 100%; border-radius: 24px;
+            max-width: 280px; width: 100%;
+            /* height:auto is required alongside the width/height attributes on the img tags —
+               without it the attribute height wins over the CSS-scaled width and distorts. */
+            height: auto;
+            border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.4);
         }
 

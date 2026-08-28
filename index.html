@@ -307,7 +307,52 @@
         }
         .hero-rating .stars { color: #E8B93E; letter-spacing: 2px; margin-right: 6px; }
         .hero-rating .dim { color: var(--text-2-on-ink); }
-        .hero-badge img { height: 52px; width: auto; }
+        .hero-badge img { height: 52px; width: auto; display: block; }
+        .hero-cta-row {
+            display: flex; align-items: center; justify-content: center; gap: 22px;
+        }
+        .hero-qr {
+            display: none;
+            flex-direction: column; align-items: center; gap: 6px;
+        }
+        .hero-qr img {
+            width: 88px; height: 88px;
+            background: #fff; border-radius: 12px; padding: 6px;
+        }
+        .hero-qr span { font-size: 11.5px; color: var(--text-2-on-ink); letter-spacing: 0.04em; }
+        @media (min-width: 900px) { .hero-qr { display: flex; } }
+
+        /* Stat strip — dense, dated, extractable numbers. */
+        .stat-strip { padding: 64px 0 56px; border-bottom: 1px solid var(--hair); }
+        .stat-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+            text-align: center;
+        }
+        .stat .n {
+            font-size: clamp(28px, 3.6vw, 40px); font-weight: 650; letter-spacing: -0.02em;
+            font-variant-numeric: tabular-nums; line-height: 1.1;
+        }
+        .stat .d { font-size: 13.5px; color: var(--text-2); margin-top: 6px; line-height: 1.45; }
+        .stat-note { text-align: center; font-size: 12.5px; color: var(--text-2); margin-top: 32px; }
+        @media (max-width: 700px) { .stat-grid { grid-template-columns: 1fr 1fr; gap: 28px 16px; } }
+
+        /* Review quotes — real App Store reviews; trust at the decision point. */
+        .quotes-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+        }
+        .quote {
+            border: 1px solid var(--hair); border-radius: var(--radius);
+            background: #fff; padding: 26px 24px;
+            display: flex; flex-direction: column;
+        }
+        .quote .q-stars { color: #E8B93E; font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; }
+        .quote blockquote {
+            font-size: 15.5px; line-height: 1.6; color: var(--text);
+            margin-bottom: 16px; flex: 1;
+        }
+        .quote cite { font-style: normal; font-size: 13px; color: var(--text-2); }
+        .quote cite b { color: var(--text); font-weight: 600; }
+        @media (max-width: 820px) { .quotes-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
         .hero-video {
             max-width: 300px; margin: 64px auto 0;
             aspect-ratio: 9 / 19.5;
@@ -589,9 +634,12 @@
 <!-- Hero -->
 <section class="hero">
     <div class="container">
-        <p class="hero-eyebrow">Countdown widgets for iPhone</p>
-        <h1>Every moment worth<br>waiting for.</h1>
-        <p class="lede">DayDrop puts your birthdays, trips, and milestones on your Home Screen — with AI-generated backgrounds, Dynamic Island Live Activities, and widgets on every iOS surface.</p>
+        <p class="hero-eyebrow">Every moment worth waiting for</p>
+        <!-- H1 = plain-language category + platform (the Duolingo/Calm formula: say what it is).
+             Keeps the primary keyword in the H1; the emotional line moved to the eyebrow.
+             The lede is definition-shaped on purpose — the sentence an AI engine can lift verbatim. -->
+        <h1>The countdown widget app<br>for iPhone.</h1>
+        <p class="lede">DayDrop is a free countdown app for iPhone, iPad, and Apple Watch with AI-generated event backgrounds, Dynamic Island Live Activities, and widgets on every iOS surface — Home Screen, Lock Screen, StandBy, and Control Center.</p>
 
         <!-- Social proof sits between headline and CTA — the decision point. -->
         <p class="hero-rating">
@@ -600,9 +648,17 @@
             <span class="dim">from <span id="rating-count">71</span> ratings worldwide · Free · No account needed</span>
         </p>
 
-        <a href="/get" class="hero-badge">
-            <img src="./assets/appstore-badge.svg" alt="Download DayDrop countdown app on the App Store" width="156" height="52">
-        </a>
+        <div class="hero-cta-row">
+            <a href="/get" class="hero-badge">
+                <img src="./assets/appstore-badge.svg" alt="Download DayDrop countdown app on the App Store" width="156" height="52">
+            </a>
+            <!-- Desktop → phone handoff: scanning lands on /get, so QR installs keep the
+                 ct=web_home attribution row. Hidden on touch-size screens. -->
+            <div class="hero-qr" aria-label="QR code to download DayDrop">
+                <img src="./assets/qr-get.svg" alt="Scan with your iPhone camera to download DayDrop" width="88" height="88">
+                <span>Scan to install</span>
+            </div>
+        </div>
 
         <div class="hero-video">
             <video autoplay muted loop playsinline poster="./assets/preview_poster.webp" width="720" height="1280">
@@ -613,6 +669,31 @@
         <p class="hero-meta">
             <span>iPhone</span><span>iPad</span><span>Apple Watch</span><span>16 languages</span><span>10 widget placements</span>
         </p>
+    </div>
+</section>
+
+<!-- Stat strip — verifiable, dated numbers up front -->
+<section class="stat-strip">
+    <div class="container">
+        <div class="stat-grid">
+            <div class="stat">
+                <div class="n"><span id="stat-rating-value">4.7</span>★</div>
+                <div class="d">from <span id="stat-rating-count">71</span> App Store ratings worldwide</div>
+            </div>
+            <div class="stat">
+                <div class="n">10</div>
+                <div class="d">widget placements across iOS — most countdown apps ship 2–4</div>
+            </div>
+            <div class="stat">
+                <div class="n">3 of 72</div>
+                <div class="d">countdown apps on the US App Store offer AI backgrounds. DayDrop is the only one that syncs them to Apple Watch</div>
+            </div>
+            <div class="stat">
+                <div class="n">16</div>
+                <div class="d">languages, fully translated — interface, widgets, notifications</div>
+            </div>
+        </div>
+        <p class="stat-note">App Store data verified 28 August 2026 · rating updates daily · 72-app scan conducted 6 August 2026</p>
     </div>
 </section>
 
@@ -798,8 +879,36 @@
     </div>
 </section>
 
-<!-- Pricing -->
+<!-- Real App Store reviews — quoted verbatim -->
 <section>
+    <div class="container">
+        <div class="centered">
+            <p class="section-eyebrow">Reviews</p>
+            <h2 class="section-title">What people say</h2>
+            <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Quoted verbatim from public App Store reviews, United States storefront.</p>
+        </div>
+        <div class="quotes-grid">
+            <div class="quote">
+                <div class="q-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>&ldquo;I&rsquo;ve tried so many countdown apps that are either ugly or forget to update widgets. DayDrop is different. Widgets actually look like they belong on iOS, and they update automatically.&rdquo;</blockquote>
+                <cite><b>Man.Osm</b> · App Store review</cite>
+            </div>
+            <div class="quote">
+                <div class="q-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>&ldquo;I didn&rsquo;t know having a day counter would be so helpful. I think of this app as the killer of &lsquo;out of sight, out of mind.&rsquo; It&rsquo;s a sneakily simple idea but very useful.&rdquo;</blockquote>
+                <cite><b>gprime72</b> · App Store review</cite>
+            </div>
+            <div class="quote">
+                <div class="q-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>&ldquo;An elegant solution to keep track of the most important events in your life. Beautiful widgets for your home and lock screen, and AI that creates the perfect background for your countdown.&rdquo;</blockquote>
+                <cite><b>7J7I7M7</b> · App Store review</cite>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="spec-section">
     <div class="container">
         <div class="centered">
             <p class="section-eyebrow">Pricing</p>
@@ -859,7 +968,7 @@
 </section>
 
 <!-- FAQ -->
-<section class="spec-section">
+<section>
     <div class="container">
         <div class="centered">
             <p class="section-eyebrow">Questions</p>
@@ -924,7 +1033,7 @@
 </section>
 
 <!-- Use cases — long-tail keyword section -->
-<section>
+<section class="spec-section">
     <div class="container">
         <p class="section-eyebrow">Use cases</p>
         <h2 class="section-title">What can you count down to?</h2>
@@ -966,7 +1075,7 @@
 </section>
 
 <!-- How to — ranks for "how to add countdown widget on iPhone" -->
-<section class="spec-section">
+<section>
     <div class="container">
         <div class="centered">
             <p class="section-eyebrow">Setup</p>

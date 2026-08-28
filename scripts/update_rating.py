@@ -84,6 +84,8 @@ def main():
         (r'("ratingValue": ")[\d.]+', rf"\g<1>{avg}"),
         (r'("ratingCount": ")\d+', rf"\g<1>{total}"),
         (r'(id="sticky-rating">)[\d.]+', rf"\g<1>{avg}"),
+        (r'(id="stat-rating-value">)[\d.]+', rf"\g<1>{avg}"),
+        (r'(id="stat-rating-count">)[\d,]+', rf"\g<1>{total}"),
     ])
     roundup = REPO / "blog" / "best-countdown-apps-2026.html"
     changed |= sub_all(roundup, [

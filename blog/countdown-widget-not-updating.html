@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Widget Not Updating on iPhone? 7 Fixes (iOS 18 &amp; 26)</title>
+    <meta name="description" content="Your iPhone countdown widget is stuck on the wrong number of days. Here's what's actually happening, what iOS does by design, and seven fixes in order — from Low Power Mode to rebuilding the widget timeline.">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://daydrop.beatroot.dev/blog/countdown-widget-not-updating.html">
+    <meta property="og:title" content="Countdown Widget Not Updating on iPhone? 7 Fixes">
+    <meta property="og:description" content="Why iPhone widgets go stale, what iOS throttles on purpose, and the fixes in the order worth trying them.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://daydrop.beatroot.dev/blog/countdown-widget-not-updating.html">
+    <meta property="og:image" content="https://daydrop.beatroot.dev/assets/AppIcon-og.png">
+
+    <meta name="apple-itunes-app" content="app-id=6759470132">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Fix a countdown widget that is not updating on iPhone",
+        "description": "Seven fixes for an iPhone countdown widget stuck on the wrong day count, in the order worth trying them.",
+        "step": [
+            {"@type": "HowToStep", "name": "Turn off Low Power Mode", "text": "Low Power Mode throttles widget refreshes. Settings, Battery, turn off Low Power Mode, then check the widget."},
+            {"@type": "HowToStep", "name": "Enable Background App Refresh", "text": "Settings, General, Background App Refresh. Make sure it is on, and on for the countdown app."},
+            {"@type": "HowToStep", "name": "Set Date and Time automatically", "text": "Settings, General, Date & Time, Set Automatically. A manual date or wrong time zone breaks the day math."},
+            {"@type": "HowToStep", "name": "Open the app once", "text": "Opening the app lets it rebuild the widget timeline immediately instead of waiting for the system."},
+            {"@type": "HowToStep", "name": "Remove and re-add the widget", "text": "Long-press the widget, Remove Widget, then add it again. This clears a stale timeline left over from an app update."},
+            {"@type": "HowToStep", "name": "Restart the iPhone", "text": "A restart resets the WidgetKit process that draws and refreshes all widgets."},
+            {"@type": "HowToStep", "name": "Check for an app update", "text": "Update the app in the App Store, then re-add the widget."}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Why is my iPhone countdown widget stuck on the wrong number of days?", "acceptedAnswer": {"@type": "Answer", "text": "Almost always because iOS has not refreshed the widget yet. iOS gives every widget a limited number of refreshes per day and throttles them further in Low Power Mode or when Background App Refresh is off. Opening the app once forces the widget to rebuild its timeline."}},
+            {"@type": "Question", "name": "How often do iPhone widgets actually update?", "acceptedAnswer": {"@type": "Answer", "text": "iOS decides. Widgets do not update continuously; they are given a budget of refreshes per day that the system allocates based on how often you look at them. A countdown widget showing whole days typically only needs to change once, around midnight."}},
+            {"@type": "Question", "name": "Why does my countdown widget not tick down by the second?", "acceptedAnswer": {"@type": "Answer", "text": "By design. Home Screen and Lock Screen widgets are static snapshots that iOS redraws on a schedule, so they cannot animate a live second counter. Second-by-second countdowns run as a Live Activity on the Lock Screen and in the Dynamic Island instead."}},
+            {"@type": "Question", "name": "Does Low Power Mode stop widgets from updating?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Low Power Mode reduces background activity, including widget refreshes. A widget can stay visibly stale for hours while it is on."}}
+        ]
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            background: #FBFBF9; color: #1D1D1F; line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .article { max-width: 720px; margin: 0 auto; padding: 88px 24px 60px; }
+        .back { color: #0063D6; text-decoration: none; font-size: 15px; display: inline-block; margin-bottom: 36px; }
+        h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 650; letter-spacing: -0.025em; margin-bottom: 16px; line-height: 1.15; text-wrap: balance; }
+        .meta { color: #71717A; font-size: 14px; margin-bottom: 40px; }
+        h2 { font-size: 24px; font-weight: 650; letter-spacing: -0.015em; margin: 44px 0 16px; }
+        h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 32px 0 12px; }
+        p { font-size: 17px; color: #3E3E43; margin-bottom: 16px; }
+        ol, ul { margin: 0 0 16px 24px; color: #3E3E43; }
+        li { margin-bottom: 8px; font-size: 16px; }
+        a { color: #0063D6; }
+        .step { border: 1px solid #E5E5E1; background: #fff; padding: 20px 24px; border-radius: 16px; margin: 16px 0; }
+        .step-num { color: #71717A; font-weight: 600; font-size: 12px; letter-spacing: 0.1em; margin-bottom: 8px; }
+        .note { border-left: 3px solid #C8A24A; background: #FAF7EF; padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 24px 0; }
+        .note p { margin: 0; font-size: 16px; }
+        .cta-box { border: 1px solid #E5E5E1; background: #F4F4F1; padding: 28px 24px; border-radius: 16px; text-align: center; margin: 40px 0; }
+        .cta-box a { background: #0A7AFF; color: #fff; padding: 12px 28px; border-radius: 100px; text-decoration: none; font-weight: 500; display: inline-block; margin-top: 12px; }
+        .footer-blog { text-align: center; padding: 40px 0; border-top: 1px solid #E5E5E1; margin-top: 60px; }
+        .footer-blog a { color: #71717A; text-decoration: none; margin: 0 16px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<article class="article">
+    <a href="/" class="back">&larr; Back to DayDrop</a>
+
+    <h1>Countdown Widget Not Updating on iPhone?</h1>
+    <p class="meta">Updated September 2026 &middot; 5 min read &middot; iOS 18 &amp; iOS 26</p>
+
+    <p>Your countdown said 42 days yesterday. It still says 42 days. The app itself shows the right number, but the widget on your Home Screen is frozen in the past.</p>
+
+    <p>This is one of the most common iPhone widget complaints, and the cause is almost never the app. It's how iOS schedules widget refreshes. Here's what's actually happening, and the seven fixes in the order worth trying them.</p>
+
+    <h2>First: what iOS does on purpose</h2>
+
+    <p>Widgets don't run continuously. Your iPhone doesn't keep every widget awake and recalculating — that would drain the battery. Instead, an app hands iOS a <strong>timeline</strong>: a set of pre-rendered future states, along with when each should appear. iOS then redraws the widget on its own schedule.</p>
+
+    <p>Two consequences surprise people:</p>
+
+    <ul>
+        <li><strong>Each widget gets a limited number of refreshes per day.</strong> iOS allocates them based on how often you actually look at the widget. A widget you never scroll past gets refreshed less often.</li>
+        <li><strong>Widgets can't tick by the second.</strong> A Home Screen or Lock Screen widget is a snapshot, not a live view. Anything counting down in real time — seconds ticking, a progress ring filling — is a <em>Live Activity</em> on the Lock Screen and in the Dynamic Island, which is a different iOS feature entirely.</li>
+    </ul>
+
+    <p>So a countdown widget showing whole days is expected to change <strong>once a day, around midnight</strong> — not the instant the date rolls over. A few hours of lag on the day boundary is normal. Days of lag is not.</p>
+
+    <h2>The seven fixes, in order</h2>
+
+    <div class="step">
+        <div class="step-num">FIX 1 — THE USUAL CULPRIT</div>
+        <p><strong>Turn off Low Power Mode.</strong> Settings &rarr; Battery &rarr; Low Power Mode.</p>
+        <p>Low Power Mode cuts background activity, and widget refreshes are among the first things sacrificed. A widget can sit visibly stale for hours while it's on. If your phone hit 20% yesterday and you tapped the prompt, this is very likely your answer.</p>
+    </div>
+
+    <div class="step">
+        <div class="step-num">FIX 2</div>
+        <p><strong>Turn on Background App Refresh.</strong> Settings &rarr; General &rarr; Background App Refresh.</p>
+        <p>Check both that the master toggle is on, and that it's enabled for the countdown app specifically. With it off, the app can't refresh its timeline until you open it manually.</p>
+    </div>
+
+    <div class="step">
+        <div class="step-num">FIX 3</div>
+        <p><strong>Set Date &amp; Time automatically.</strong> Settings &rarr; General &rarr; Date &amp; Time &rarr; Set Automatically.</p>
+        <p>If you ever set the date manually — to test something, or to get past a trial — every countdown on the device does its math against the wrong "today". The same applies after travelling if the time zone didn't update.</p>
+    </div>
+
+    <div class="step">
+        <div class="step-num">FIX 4</div>
+        <p><strong>Open the app once.</strong></p>
+        <p>Launching the app gives it a chance to rebuild and hand iOS a fresh timeline immediately, rather than waiting for the system's next scheduled window. This fixes it more often than it has any right to.</p>
+    </div>
+
+    <div class="step">
+        <div class="step-num">FIX 5 — AFTER AN APP UPDATE</div>
+        <p><strong>Remove the widget and add it again.</strong> Long-press the widget &rarr; Remove Widget, then long-press the Home Screen &rarr; <strong>+</strong> &rarr; add it back.</p>
+        <p>When an app updates, a widget can hold on to a timeline built by the previous version. Re-adding forces a clean rebuild. This is the single most effective fix if the widget broke right after an update.</p>
+    </div>
+
+    <div class="step">
+        <div class="step-num">FIX 6</div>
+        <p><strong>Restart your iPhone.</strong></p>
+        <p>All widgets on iOS are drawn by one shared system process. When that process gets wedged, <em>every</em> widget goes stale at once — which is the tell. If your weather and calendar widgets are also frozen, it was never the countdown app. A restart clears it.</p>
+    </div>
+
+    <div class="step">
+        <div class="step-num">FIX 7</div>
+        <p><strong>Update the app, then re-add the widget.</strong> App Store &rarr; your profile &rarr; scroll to pending updates.</p>
+        <p>Genuine widget-refresh bugs do happen and get fixed. If you're several versions behind, update first — then repeat Fix 5.</p>
+    </div>
+
+    <div class="note">
+        <p><strong>Quick diagnostic:</strong> check whether your <em>other</em> widgets are also stale. If Weather and Calendar are stuck too, it's the system (Fixes 1, 2, 6). If only the countdown is stuck, it's that app's timeline (Fixes 4, 5, 7).</p>
+    </div>
+
+    <h2>What about Lock Screen and StandBy widgets?</h2>
+
+    <p>Same rules, same fixes — they're all built on the same widget system. Two extra notes:</p>
+
+    <ul>
+        <li><strong>Lock Screen widgets</strong> are attached to a specific Lock Screen. If you have several (one per Focus mode), you need to add the widget to each one, or it will look "missing" when a different Focus is active.</li>
+        <li><strong>StandBy widgets</strong> only appear when the iPhone is charging, in landscape, and locked. If StandBy shows nothing, check Settings &rarr; StandBy is on.</li>
+    </ul>
+
+    <h2>When it's genuinely the app's fault</h2>
+
+    <p>Being honest about this: sometimes it is. If a widget still shows the wrong day after Fixes 1 through 6, that's a real bug worth reporting — a poorly built widget can request refreshes too rarely, or crash while rendering and leave the last good snapshot on screen.</p>
+
+    <p>If you're using <a href="/get">DayDrop</a> and a widget is misbehaving after those steps, <a href="/support.html">email me</a> and I'll look at it personally. A user reporting exactly this kind of detail is how most of these get found.</p>
+
+    <div class="cta-box">
+        <p style="font-size: 18px; font-weight: 600;">Countdown widgets that stay correct</p>
+        <p style="color: #71717A;">Home Screen, Lock Screen, StandBy and Dynamic Island. Free download.</p>
+        <a href="/get">Get DayDrop</a>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+
+    <h3>Why is my countdown widget stuck on the wrong number of days?</h3>
+    <p>iOS hasn't refreshed it yet. Every widget gets a limited daily refresh budget, throttled further by Low Power Mode or with Background App Refresh off. Opening the app once usually forces a rebuild.</p>
+
+    <h3>How often do iPhone widgets update?</h3>
+    <p>iOS decides, not the app. A widget showing whole days typically only needs to change once, around midnight. There's no setting to make widgets refresh more often.</p>
+
+    <h3>Why doesn't my countdown tick down by the second?</h3>
+    <p>Widgets are snapshots redrawn on a schedule, so they can't animate. Second-by-second countdowns run as a Live Activity on the Lock Screen and in the Dynamic Island instead.</p>
+
+    <h3>Does Low Power Mode stop widgets updating?</h3>
+    <p>Yes — it's the most common cause of a stale widget, and the first thing to check.</p>
+
+    <h3>Where else can I put a countdown?</h3>
+    <p>See the full guide to <a href="/blog/countdown-widget-iphone.html">adding countdown widgets on iPhone</a>, or the <a href="/blog/christmas-countdown-iphone.html">Christmas countdown setup</a> for a seasonal walkthrough with screenshots.</p>
+</article>
+
+<div class="footer-blog">
+    <a href="/">Home</a>
+    <a href="/blog/countdown-widget-iphone.html">Widget Guide</a>
+    <a href="/blog/christmas-countdown-iphone.html">Christmas Countdown</a>
+    <a href="/blog/best-countdown-apps-2026.html">Best Countdown Apps</a>
+    <a href="/support.html">Support</a>
+    <p style="color: #71717A; font-size: 13px; margin-top: 16px;">&copy; 2026 DayDrop</p>
+</div>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "571adcf922b646e7af20f34c676c4c9b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

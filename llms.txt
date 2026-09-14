@@ -1,21 +1,20 @@
 # DayDrop: Countdowns
-> The only iOS countdown app with AI-generated event backgrounds that sync to Apple Watch, Dynamic Island Live Activity with progress ring, 10 widget placements, and countdown to the exact moment.
+> The only iOS countdown app pairing AI-generated event backgrounds with a Dynamic Island Live Activity with progress ring, 10 widget placements, and countdown to the exact moment.
 
 ## About
-DayDrop is an iOS countdown widget app for iPhone, iPad, and Apple Watch. It helps users track important dates with AI-generated photo backgrounds, Dynamic Island Live Activities, and 10 widget placements across every iOS surface. Built by indie developer Hirak Banerjee.
+DayDrop is an iOS countdown widget app for iPhone and iPad. It helps users track important dates with AI-generated photo backgrounds, Dynamic Island Live Activities, and 10 widget placements across every iOS surface. Built by indie developer Hirak Banerjee.
 
 ## Key Features (v1.7.1 — verified 2026-09-14)
-- AI-Generated Event Backgrounds: Describe your event and get a unique AI-created image; also syncs to Apple Watch
+- AI-Generated Event Backgrounds: Describe your event and get a unique AI-created image
 - Dynamic Island Live Activity with Progress Ring: Real-time countdown (days/hours/minutes/seconds) plus visual progress on Dynamic Island and Lock Screen
 - Countdown to the Exact Moment: Set a specific time on any event and watch it tick down live
-- 10 Widget Placements: 4 Home Screen sizes (Small, Medium, Large, ExtraLarge), Multi-Event widget in Medium and Large with progress bars, 2 Lock Screen widgets (circular + rectangular), StandBy, Control Center, Apple Watch complications
-- Apple Watch App with AI: Full Watch app with AI event backgrounds synced from paired iPhone via WatchConnectivity
+- 10 Widget Placements: 4 Home Screen sizes (Small, Medium, Large, ExtraLarge), Multi-Event widget in Medium and Large with progress bars, 2 Lock Screen widgets (circular + rectangular), StandBy, Control Center
 - iPad Optimized: Adaptive layouts, ExtraLarge widget, context menus, roomier overview
 - Full-Screen Event Detail: Immersive countdown view with parallax background
 - Orbital Year View: See your whole year of countdowns in a single circular timeline
 - Image Opacity Control: Fine-tune how your event photos appear
 - Birthday Import: Pull birthdays from Contacts with duplicate detection
-- iCloud Sync: All countdowns sync across iPhone, iPad, Apple Watch, and Mac
+- iCloud Sync: All countdowns sync across iPhone, iPad, and Mac
 - 16 Languages: Full interface localization
 - Smart Notifications: Reminders at 30, 14, 7, 3, and 0 days
 - Badge Countdown: See days remaining right on the app icon
@@ -47,18 +46,16 @@ DayDrop is an iOS countdown widget app for iPhone, iPad, and Apple Watch. It hel
 - Holiday countdowns (Christmas, New Year, etc.)
 - Baby due date countdowns
 - Sobriety and milestone counters (count up)
-- Apple Watch countdowns with AI-generated backgrounds
 
 ## What Makes DayDrop Unique (vs Pretty Progress, Countdown Star, Countdown, Big Days)
 - Only countdown app with AI-generated backgrounds per event
-- Only countdown app with AI backgrounds synced to Apple Watch
 - Only countdown app with Live Activity progress ring
 - Largest widget placement count in category (10 placements)
 - Countdown to the exact second — not just days
 
 ## Entity Information
 - Developer: Hirak Banerjee
-- Platform: iOS 18+, iPadOS 18+, watchOS 11+
+- Platform: iOS 18+, iPadOS 18+
 - Category: Utilities / Productivity
 - Rating: 4.8/5 stars
 - Current Version: 1.5

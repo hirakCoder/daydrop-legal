@@ -13,11 +13,11 @@
     <meta property="og:description" content="A live countdown at the top of your iPhone screen, over a background an AI made from one sentence. Real screenshots, three steps, the honest limits.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://daydrop.beatroot.dev/blog/dynamic-island-countdown-ai-background-iphone.html">
-    <meta property="og:image" content="https://daydrop.beatroot.dev/assets/f_lock_live_wedding.webp">
+    <meta property="og:image" content="https://daydrop.beatroot.dev/assets/f_island_og.webp">
     <meta name="apple-itunes-app" content="app-id=6759470132">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to Put a Countdown in the Dynamic Island with an AI-Generated Background", "description": "Create a countdown in DayDrop, generate an AI background from a text description, and run it as a Live Activity in the iPhone Dynamic Island.", "totalTime": "PT3M", "step": [{"@type": "HowToStep", "name": "Create the countdown", "text": "Download DayDrop from the App Store, tap +, name the event, pick a category and set the date. Turn on Specific time if the hour matters."}, {"@type": "HowToStep", "name": "Generate the AI background", "text": "In the event's AI Background section, describe a mood in the AI Mood box or leave it blank for Auto, then tap Generate. DayDrop creates the image in a few seconds and uses it everywhere the event appears."}, {"@type": "HowToStep", "name": "Send it to the Dynamic Island", "text": "Open the event and tap Go Live. The countdown appears in the Dynamic Island as a compact pill; long-press to expand it to the full countdown with a progress ring. Tap End Live to stop."}]}</script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which iPhones have the Dynamic Island?", "acceptedAnswer": {"@type": "Answer", "text": "iPhone 14 Pro and Pro Max, and every iPhone 15, 16 and 17 model. On other iPhones running iOS 18 or later, DayDrop's countdown still appears as a Live Activity on the Lock Screen."}}, {"@type": "Question", "name": "Why did my countdown disappear from the Dynamic Island?", "acceptedAnswer": {"@type": "Answer", "text": "iOS automatically ends Live Activities after roughly eight hours. Open the event in DayDrop and tap Go Live again. Widgets don't have this limit."}}, {"@type": "Question", "name": "Does the Dynamic Island countdown update in real time?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The expanded view counts days, hours, minutes and seconds live, and a progress ring fills as the date approaches. The compact pill shows the days remaining."}}, {"@type": "Question", "name": "Can I use my own photo instead of an AI image?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Any photo from your library works as the background on the free plan. AI generation is a DayDrop Premium feature."}}, {"@type": "Question", "name": "Can I run more than one countdown in the Dynamic Island?", "acceptedAnswer": {"@type": "Answer", "text": "One at a time. For several events side by side, use the Medium or Large multi-event widget on the Home Screen."}}]}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Countdown in the Dynamic Island with an AI-Generated Background (iPhone Guide)", "datePublished": "2026-09-30", "dateModified": "2026-09-30", "author": {"@type": "Person", "name": "Hirak Banerjee"}, "publisher": {"@type": "Organization", "name": "DayDrop"}, "image": "https://daydrop.beatroot.dev/assets/f_ai_hawaii.webp", "mainEntityOfPage": "https://daydrop.beatroot.dev/blog/dynamic-island-countdown-ai-background-iphone.html"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Countdown in the Dynamic Island with an AI-Generated Background (iPhone Guide)", "datePublished": "2026-09-30", "dateModified": "2026-09-30", "author": {"@type": "Person", "name": "Hirak Banerjee"}, "publisher": {"@type": "Organization", "name": "DayDrop"}, "image": "https://daydrop.beatroot.dev/assets/f_island_og.webp", "mainEntityOfPage": "https://daydrop.beatroot.dev/blog/dynamic-island-countdown-ai-background-iphone.html"}</script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -40,6 +40,7 @@
         .cta-box { border: 1px solid #E5E5E1; background: #F4F4F1; padding: 28px 24px; border-radius: 16px; text-align: center; margin: 40px 0; }
         .cta-box a { background: #0A7AFF; color: #fff; padding: 12px 28px; border-radius: 100px; text-decoration: none; font-weight: 500; display: inline-block; margin-top: 12px; }
         .shot { display: block; width: min(320px, 78%); height: auto; margin: 28px auto 8px; filter: drop-shadow(0 18px 40px rgba(0,0,0,0.18)); }
+        .shot.wide { width: min(640px, 100%); filter: none; border-radius: 18px; }
         .caption { text-align: center; color: #71717A; font-size: 13.5px; margin-bottom: 28px; }
         .footer-blog { text-align: center; padding: 40px 0; border-top: 1px solid #E5E5E1; margin-top: 60px; }
         .footer-blog a { color: #71717A; text-decoration: none; margin: 0 16px; font-size: 14px; }
@@ -57,8 +58,8 @@
 
     <p>This guide does both with <a href="/get">DayDrop</a> in about three minutes. The screenshots are real captures from an iPhone and the iOS Simulator. I'm the developer, so I'll also be straight about what the feature can't do.</p>
 
-    <img class="shot" src="/assets/f_lock_live_wedding.webp" width="816" height="1765" alt="Real iPhone Lock Screen showing a DayDrop Live Activity card for a wedding, 61 days away, with a photo of the couple, plus a Lock Screen widget with a progress ring">
-    <p class="caption">The Live Activity on a real iPhone Lock Screen: 61 days to a wedding, with the couple's photo as the background.</p>
+    <img class="shot wide" src="/assets/f_island_expanded.webp" width="1200" height="383" alt="iPhone Dynamic Island expanded to show DayDrop's countdown: Hawaii Vacation, 18 days, a live hours-minutes-seconds timer and a progress ring over a beach-at-dusk background">
+    <p class="caption">The expanded Dynamic Island, captured in the iOS Simulator: 18 days to a Hawaii trip, with the AI-generated beach background behind it.</p>
 
     <h2>Step 1: Create the countdown</h2>
 
@@ -91,8 +92,11 @@
     <img class="shot" src="/assets/f_golive_beach.webp" width="816" height="1774" alt="DayDrop event screen with the Go Live button highlighted below a 22-day countdown and a beach background">
     <p class="caption">Go Live is at the bottom of every event. One tap.</p>
 
-    <img class="shot" src="/assets/f_island_compact.webp" width="816" height="220" alt="Close-up of the iPhone Dynamic Island showing DayDrop's compact countdown: a travel icon and 22d" style="width:min(420px,92%);filter:none;border-radius:16px">
-    <p class="caption">The compact view in the Dynamic Island: 22 days to a trip, visible from any app. Long-press it for the full countdown and progress ring.</p>
+    <img class="shot wide" src="/assets/f_island_compact.webp" width="1200" height="199" alt="Close-up of the iPhone status bar with the Dynamic Island showing DayDrop's compact countdown: a travel icon on the left and 18d on the right">
+    <p class="caption">The compact view, here over the Settings app: a travel icon and <strong>18d</strong>, visible from any app. Long-press the Island for the expanded view at the top of this page.</p>
+
+    <img class="shot" src="/assets/f_lock_live_wedding.webp" width="816" height="1765" alt="Real iPhone Lock Screen showing the same DayDrop Live Activity as a card for a wedding, 61 days away, with a photo of the couple">
+    <p class="caption">The same Live Activity on a real iPhone Lock Screen, where it shows as a full card: 61 days to a wedding.</p>
 
     <h2>What it can and can't do</h2>
 

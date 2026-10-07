@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Widget on the iPhone Lock Screen: Setup + 8 Apps Compared (2026)</title>
+    <meta name="description" content="Put a countdown on your iPhone Lock Screen in under two minutes: the three widget shapes, exact steps for iOS 18 and 26, why it can't tick every second, and 8 apps that support it, with App Store ratings verified October 2026.">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://daydrop.beatroot.dev/blog/countdown-lock-screen-widget-iphone.html">
+    <meta property="og:title" content="Countdown Widget on the iPhone Lock Screen: Setup + 8 Apps Compared">
+    <meta property="og:description" content="The three Lock Screen widget shapes, exact steps for iOS 18 and 26, why a Lock Screen widget can't tick every second, and 8 apps compared with verified ratings.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://daydrop.beatroot.dev/blog/countdown-lock-screen-widget-iphone.html">
+    <meta property="og:image" content="https://daydrop.beatroot.dev/assets/AppIcon-og.png">
+    <meta name="apple-itunes-app" content="app-id=6759470132">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to add a countdown widget to the iPhone Lock Screen",
+        "description": "Add a circular, rectangular or inline countdown widget to the iPhone Lock Screen on iOS 18 or iOS 26.",
+        "totalTime": "PT2M",
+        "step": [
+            {"@type": "HowToStep", "name": "Install a countdown app with Lock Screen widgets", "text": "Install an app whose widgets support the Lock Screen, such as DayDrop, and create your countdown in the app."},
+            {"@type": "HowToStep", "name": "Open Lock Screen editing", "text": "Wake the iPhone, unlock with Face ID but stay on the Lock Screen, then press and hold an empty area until Customize appears."},
+            {"@type": "HowToStep", "name": "Choose the Lock Screen", "text": "Tap Customize, then tap Lock Screen on the left."},
+            {"@type": "HowToStep", "name": "Add the widget", "text": "Tap the widget strip under the clock, pick the app, then choose the circular, rectangular or inline shape. Inline widgets go in the line above the clock."},
+            {"@type": "HowToStep", "name": "Pick the event and finish", "text": "Tap the placed widget to choose which countdown it shows, then tap Done twice."}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Does iOS have a built-in countdown widget for the Lock Screen?", "acceptedAnswer": {"@type": "Answer", "text": "No. iOS 18 and iOS 26 ship Lock Screen widgets for Calendar, Reminders, Weather, Clock, Fitness and Batteries, but none of them counts down to a date you choose. You need a third-party countdown app that offers Lock Screen widgets."}},
+            {"@type": "Question", "name": "Why doesn't my Lock Screen countdown widget show seconds?", "acceptedAnswer": {"@type": "Answer", "text": "Apple limits how often widgets can redraw to protect battery life, so a Lock Screen widget is refreshed on a schedule, not every second. For a live ticking countdown use a Live Activity, which runs on the Lock Screen and in the Dynamic Island and can show hours, minutes and seconds."}},
+            {"@type": "Question", "name": "How many countdown widgets fit on the Lock Screen?", "acceptedAnswer": {"@type": "Answer", "text": "The strip under the clock holds up to four small slots: four circular widgets, two rectangular widgets, or one rectangular and two circular. One inline widget fits in the line above the clock, so you can show up to five countdowns at once."}},
+            {"@type": "Question", "name": "Are Lock Screen countdown widgets free?", "acceptedAnswer": {"@type": "Answer", "text": "Every app in this comparison is free to download. Most, including DayDrop, place Lock Screen widgets in a paid tier or unlock them with an in-app purchase. DayDrop's Home Screen widgets are free; Lock Screen widgets are part of Premium, which has a one-month free trial on the yearly plan."}},
+            {"@type": "Question", "name": "Can I have a different countdown on each Lock Screen?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each Lock Screen you create keeps its own widgets, so you can pair a holiday countdown with one wallpaper and a trip countdown with another, then swipe between them."}}
+        ]
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            background: #FBFBF9; color: #1D1D1F; line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .article { max-width: 720px; margin: 0 auto; padding: 88px 24px 60px; }
+        .back { color: #0063D6; text-decoration: none; font-size: 15px; display: inline-block; margin-bottom: 36px; }
+        h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 650; letter-spacing: -0.025em; margin-bottom: 16px; line-height: 1.15; text-wrap: balance; }
+        .meta { color: #71717A; font-size: 14px; margin-bottom: 40px; }
+        h2 { font-size: 24px; font-weight: 650; letter-spacing: -0.015em; margin: 44px 0 16px; }
+        h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 32px 0 12px; }
+        p { font-size: 17px; color: #3E3E43; margin-bottom: 16px; }
+        ol, ul { margin: 0 0 16px 24px; color: #3E3E43; }
+        li { margin-bottom: 8px; font-size: 16px; }
+        a { color: #0063D6; }
+        .answer { border-left: 3px solid #0A7AFF; background: #fff; padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 0 0 28px; }
+        .answer p { margin-bottom: 8px; }
+        .step { border: 1px solid #E5E5E1; background: #fff; padding: 20px 24px; border-radius: 16px; margin: 16px 0; }
+        .step-num { color: #71717A; font-weight: 600; font-size: 12px; letter-spacing: 0.1em; margin-bottom: 8px; }
+        .tbl { overflow-x: auto; margin: 24px 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 15px; }
+        th, td { text-align: left; padding: 10px 10px; border-bottom: 1px solid #E5E5E1; vertical-align: top; }
+        th { font-weight: 600; color: #1D1D1F; background: #F4F4F1; }
+        td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+        .fine { color: #71717A; font-size: 13.5px; margin-top: -12px; }
+        .cta-box { border: 1px solid #E5E5E1; background: #F4F4F1; padding: 28px 24px; border-radius: 16px; text-align: center; margin: 40px 0; }
+        .cta-box a { background: #0A7AFF; color: #fff; padding: 12px 28px; border-radius: 100px; text-decoration: none; font-weight: 500; display: inline-block; margin-top: 12px; }
+        .footer-blog { text-align: center; padding: 40px 0; border-top: 1px solid #E5E5E1; margin-top: 60px; }
+        .footer-blog a { color: #71717A; text-decoration: none; margin: 0 16px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<article class="article">
+    <a href="/blog/" class="back">&larr; All guides</a>
+
+    <h1>Countdown Widget on the iPhone Lock Screen: Setup and 8 Apps Compared</h1>
+    <p class="meta">Updated October 7, 2026 &middot; 6 min read &middot; iOS 18 and iOS 26</p>
+
+    <div class="answer">
+        <p><strong>Short answer:</strong> iOS has no built-in countdown widget, so install a countdown app that supports Lock Screen widgets, create the event, then press and hold the Lock Screen, tap <strong>Customize &rarr; Lock Screen</strong>, tap the strip under the clock and add the app's circular, rectangular or inline widget. It takes about two minutes.</p>
+        <p>One limit to know before you start: Lock Screen widgets refresh on Apple's schedule, so they show days (and sometimes hours), not ticking seconds. If you want seconds, use a Live Activity instead; the section below explains the difference.</p>
+    </div>
+
+    <h2>The three Lock Screen widget shapes</h2>
+    <p>Every Lock Screen widget on iPhone is one of three shapes, and the shape decides what a countdown can show.</p>
+    <div class="tbl"><table>
+        <tr><th>Shape</th><th>Where it sits</th><th>Best for</th><th>What a countdown shows</th></tr>
+        <tr><td>Circular</td><td>Strip under the clock (1 of 4 slots)</td><td>One number at a glance</td><td>Days left, often with a progress ring</td></tr>
+        <tr><td>Rectangular</td><td>Strip under the clock (2 of 4 slots)</td><td>Name plus number</td><td>Event name, days left, sometimes the date</td></tr>
+        <tr><td>Inline</td><td>The single line above the clock</td><td>Text only, always visible</td><td>"42 days to Lisbon" style text</td></tr>
+    </table></div>
+    <p>The strip under the clock has four small slots. You can fill it with four circular widgets, two rectangular ones, or one rectangular and two circular. Add the inline line above the clock and you can keep five countdowns on one Lock Screen.</p>
+
+    <h2>How to add the widget (iOS 18 and iOS 26)</h2>
+    <div class="step">
+        <div class="step-num">STEP 1</div>
+        <p>Install a countdown app that offers Lock Screen widgets and create your event in the app. In <a href="/get">DayDrop</a>, tap <strong>+</strong>, enter the name and date, and save.</p>
+    </div>
+    <div class="step">
+        <div class="step-num">STEP 2</div>
+        <p>Wake the phone and unlock with Face ID, but <strong>stay on the Lock Screen</strong> (don't swipe up). Press and hold an empty area until the screen zooms out and <strong>Customize</strong> appears.</p>
+    </div>
+    <div class="step">
+        <div class="step-num">STEP 3</div>
+        <p>Tap <strong>Customize</strong>, then <strong>Lock Screen</strong> on the left. The widget strip under the clock becomes editable.</p>
+    </div>
+    <div class="step">
+        <div class="step-num">STEP 4</div>
+        <p>Tap the strip, find the app in the list, and choose <strong>circular</strong> or <strong>rectangular</strong>. For an inline widget, tap the date line <strong>above</strong> the clock instead and pick the app there.</p>
+    </div>
+    <div class="step">
+        <div class="step-num">STEP 5</div>
+        <p>Tap the widget you just placed to choose <strong>which countdown</strong> it shows (most apps default to the next event). Tap <strong>Done</strong>, then <strong>Done</strong> again.</p>
+    </div>
+    <p>If the app doesn't appear in the widget list, open it once first; iOS registers an app's widgets on first launch. If a widget shows placeholder text, tap it and pick an event.</p>
+
+    <h2>Why a Lock Screen widget can't tick every second</h2>
+    <p>Widgets on iOS are snapshots. The system asks the app for a timeline of images and shows them on a schedule it controls, with a daily budget of refreshes to protect battery. A countdown that changes once a day fits that model perfectly; a countdown that changes every second does not, and Apple doesn't allow widgets to redraw that often. That is why every app in the table below shows days, and at best hours, on the Lock Screen.</p>
+    <p>The exception is a <strong>Live Activity</strong>. Live Activities are the Lock Screen and Dynamic Island elements that sports scores and food-delivery apps use, and they can run a true ticking timer. DayDrop's Live Activity shows days, hours, minutes and seconds with a progress ring, in the Dynamic Island and on the Lock Screen, for events with a set time. If seconds matter to you, that is the feature to look for; see <a href="/blog/dynamic-island-countdown-ai-background-iphone.html">the Dynamic Island countdown guide</a>.</p>
+
+    <h2>8 countdown apps with Lock Screen widgets, compared</h2>
+    <p>Ratings and counts are from the US App Store on October 7, 2026, via Apple's public lookup. All eight are free to download; most sell extra widgets or features through in-app purchases, and the exact prices change often, so check the listing. "Lock Screen" means the app's own description says it offers Lock Screen widgets.</p>
+    <div class="tbl"><table>
+        <tr><th>App</th><th>Rating</th><th>Ratings</th><th>Lock Screen widgets</th><th>Live ticking (Live Activity)</th><th>StandBy</th><th>Notes</th></tr>
+        <tr><td>Countdown (Find Appiness)</td><td class="num">4.81</td><td class="num">187,887</td><td>Yes</td><td>Not listed</td><td>Yes</td><td>Largest rating count of the dedicated countdown apps; simple and dependable</td></tr>
+        <tr><td>Widgetsmith</td><td class="num">4.61</td><td class="num">774,351</td><td>Yes</td><td>Not listed</td><td>Not listed</td><td>General widget builder; countdown is one widget type among many</td></tr>
+        <tr><td>Countdown: Event Countdown (ROOT38)</td><td class="num">4.75</td><td class="num">23,872</td><td>Yes</td><td>Yes</td><td>Yes</td><td>One of the few with a Live Activity</td></tr>
+        <tr><td>DayCount</td><td class="num">4.66</td><td class="num">26,260</td><td>Yes</td><td>Not listed</td><td>Not listed</td><td>Counts up and down; long-running app</td></tr>
+        <tr><td>Countdown Buddy</td><td class="num">4.64</td><td class="num">26,041</td><td>Yes</td><td>Not listed</td><td>Not listed</td><td>Playful style, subscription for extras</td></tr>
+        <tr><td>Days &bull; Countdown &amp; Widgets</td><td class="num">4.77</td><td class="num">12,599</td><td>Yes</td><td>Not listed</td><td>Not listed</td><td>Clean design, many widget looks</td></tr>
+        <tr><td>Countdown &ndash; Pretty Progress</td><td class="num">4.71</td><td class="num">3,073</td><td>Yes</td><td>Not listed</td><td>Not listed</td><td>Progress-bar focus, pretty widgets</td></tr>
+        <tr><td><strong>DayDrop</strong> (this site)</td><td class="num">4.76</td><td class="num">21 (US) &middot; 83 worldwide</td><td>Yes: circular, rectangular, inline</td><td>Yes, with progress ring</td><td>Yes</td><td>AI-generated event backgrounds; Lock Screen widgets are in Premium (one-month free trial on yearly)</td></tr>
+    </table></div>
+    <p class="fine">"Not listed" means the feature isn't mentioned in the app's App Store description on the date above; the app may still offer it. DayDrop's worldwide rating is 4.6 from 83 ratings across all storefronts.</p>
+
+    <h3>How to choose</h3>
+    <ul>
+        <li><strong>You want the safest, most-reviewed pick:</strong> Countdown by Find Appiness. Nearly 188,000 ratings at 4.81 is hard to argue with.</li>
+        <li><strong>You already use Widgetsmith:</strong> add its countdown widget and skip a second app.</li>
+        <li><strong>You want seconds ticking on the Lock Screen:</strong> you need a Live Activity, so Countdown: Event Countdown or DayDrop.</li>
+        <li><strong>You want the Lock Screen to match a photo of the event:</strong> DayDrop generates the background from a description and uses it across the widgets, the Live Activity and the app.</li>
+    </ul>
+
+    <div class="cta-box">
+        <p><strong>DayDrop</strong> is free with unlimited countdowns and Home Screen widgets. Lock Screen widgets, the Live Activity and AI backgrounds are in Premium, with a one-month free trial on the yearly plan.</p>
+        <a href="/get">Download DayDrop</a>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+
+    <h3>Does iOS have a built-in countdown widget for the Lock Screen?</h3>
+    <p>No. iOS 18 and iOS 26 ship Lock Screen widgets for Calendar, Reminders, Weather, Clock, Fitness and Batteries, but none of them counts down to a date you choose. You need a third-party countdown app.</p>
+
+    <h3>Why doesn't my Lock Screen countdown widget show seconds?</h3>
+    <p>Apple limits how often widgets can redraw to protect battery life, so a Lock Screen widget refreshes on a schedule rather than every second. For a live ticking countdown use a Live Activity, which runs on the Lock Screen and in the Dynamic Island.</p>
+
+    <h3>How many countdown widgets fit on the Lock Screen?</h3>
+    <p>Up to four small slots under the clock (four circular, two rectangular, or one rectangular plus two circular) and one inline widget above the clock, so five countdowns at once.</p>
+
+    <h3>Are Lock Screen countdown widgets free?</h3>
+    <p>Every app above is free to download. Most, including DayDrop, put Lock Screen widgets in a paid tier or behind an in-app purchase. DayDrop's Home Screen widgets are free; Lock Screen widgets are part of Premium, which has a one-month free trial on the yearly plan.</p>
+
+    <h3>Can I have a different countdown on each Lock Screen?</h3>
+    <p>Yes. Each Lock Screen keeps its own widgets, so pair a holiday countdown with one wallpaper and a trip countdown with another, then swipe between them.</p>
+
+    <h3>My widget stopped updating. What do I do?</h3>
+    <p>Open the app once (widgets are refreshed when the app runs), check that Background App Refresh is on for it, and make sure Low Power Mode is off. The full checklist is in <a href="/blog/countdown-widget-not-updating.html">Countdown widget not updating on iPhone: 7 fixes</a>.</p>
+
+    <h2>Related guides</h2>
+    <ul>
+        <li><a href="/blog/countdown-widget-iphone.html">How to add a countdown widget on iPhone</a> (Home Screen, StandBy, Dynamic Island)</li>
+        <li><a href="/blog/dynamic-island-countdown-ai-background-iphone.html">Countdown in the Dynamic Island with an AI-generated background</a></li>
+        <li><a href="/blog/best-countdown-apps-2026.html">5 best countdown apps for iPhone in 2026</a></li>
+        <li><a href="/blog/christmas-countdown-iphone.html">How to put a Christmas countdown on your iPhone</a></li>
+    </ul>
+
+    <footer class="footer-blog">
+        <a href="/">DayDrop</a>
+        <a href="/blog/">Guides</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+    </footer>
+</article>
+
+</body>
+</html>

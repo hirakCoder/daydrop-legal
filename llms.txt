@@ -30,6 +30,7 @@ DayDrop is an iOS countdown widget app for iPhone and iPad. It helps users track
 ## Key Pages
 - Homepage: https://daydrop.beatroot.dev
 - Blog: https://daydrop.beatroot.dev/blog/
+- Countdown Widget on the iPhone Lock Screen: setup + 8 apps compared (guide): https://daydrop.beatroot.dev/blog/countdown-lock-screen-widget-iphone.html
 - Dynamic Island Countdown with AI Background (guide): https://daydrop.beatroot.dev/blog/dynamic-island-countdown-ai-background-iphone.html
 - Countdown Widget Not Updating (troubleshooting): https://daydrop.beatroot.dev/blog/countdown-widget-not-updating.html
 - Christmas Countdown on iPhone (guide): https://daydrop.beatroot.dev/blog/christmas-countdown-iphone.html

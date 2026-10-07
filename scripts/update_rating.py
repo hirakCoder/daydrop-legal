@@ -101,7 +101,7 @@ def main():
     today = time.strftime("%Y-%m-%d")
     version = live_version()
     changed |= sub_all(REPO / "llms.txt", [
-        (r"(- Worldwide App Store rating: )[\d.]+ from \d+ ratings \(all storefronts, as of )[\d-]+", rf"\g<1>{avg} from {total} ratings (all storefronts, as of {today}"),
+        (r"(- Worldwide App Store rating: )[\d.]+ from \d+ ratings \(all storefronts, as of [\d-]+\)", rf"\g<1>{avg} from {total} ratings (all storefronts, as of {today})"),
         (r"(- Live App Store version: )[\d.]+", rf"\g<1>{version}"),
         (r"(## Key Features \(v)[\d.]+( — verified )[\d-]+", rf"\g<1>{version}\g<2>{today}"),
     ])

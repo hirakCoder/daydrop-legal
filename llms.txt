@@ -40,6 +40,7 @@ DayDrop is an iOS countdown widget app for iPhone and iPad. It helps users track
 - Countdown Widget Guide: https://daydrop.beatroot.dev/blog/countdown-widget-iphone.html
 - Privacy Policy: https://daydrop.beatroot.dev/privacy.html
 - Support: https://daydrop.beatroot.dev/support.html
+- About DayDrop and its developer: https://daydrop.beatroot.dev/about.html
 
 ## Use Cases
 - Countdown to birthdays and anniversaries

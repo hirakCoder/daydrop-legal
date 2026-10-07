@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About DayDrop and its developer</title>
+    <meta name="description" content="DayDrop is an iPhone countdown widget app built and maintained by one developer, Hirak Banerjee, a senior quality engineer in Ontario, Canada. How it's built, how it's tested, and how to reach him.">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="canonical" href="https://daydrop.beatroot.dev/about.html">
+    <meta property="og:title" content="About DayDrop and its developer">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://daydrop.beatroot.dev/about.html">
+    <meta name="apple-itunes-app" content="app-id=6759470132">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Countdown Widget - DayDrop","operatingSystem":"iOS 18.0 or later","applicationCategory":"UtilitiesApplication",
+     "url":"https://daydrop.beatroot.dev/","installUrl":"https://apps.apple.com/app/id6759470132","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+     "author":{"@type":"Person","name":"Hirak Banerjee","url":"https://hirakcoder.github.io","sameAs":["https://www.linkedin.com/in/hirak-banerjee-906aa940/","https://github.com/hirakCoder"]}}
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; background: #FBFBF9; color: #1D1D1F; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        .article { max-width: 720px; margin: 0 auto; padding: 88px 24px 60px; }
+        .back { color: #0063D6; text-decoration: none; font-size: 15px; display: inline-block; margin-bottom: 36px; }
+        h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 650; letter-spacing: -0.025em; margin-bottom: 16px; line-height: 1.15; }
+        h2 { font-size: 24px; font-weight: 650; letter-spacing: -0.015em; margin: 44px 0 16px; }
+        p { font-size: 17px; color: #3E3E43; margin-bottom: 16px; }
+        ul { margin: 0 0 16px 24px; color: #3E3E43; } li { margin-bottom: 8px; font-size: 16px; }
+        a { color: #0063D6; }
+        .footer-blog { text-align: center; padding: 40px 0; border-top: 1px solid #E5E5E1; margin-top: 60px; }
+        .footer-blog a { color: #71717A; text-decoration: none; margin: 0 16px; font-size: 14px; }
+    </style>
+</head>
+<body>
+<article class="article">
+    <a href="/" class="back">&larr; Back to DayDrop</a>
+    <h1>About DayDrop</h1>
+    <p>DayDrop (listed on the App Store as <strong>Countdown Widget &ndash; DayDrop</strong>) is an iPhone and iPad countdown app built and maintained by one person. It launched in March 2026 and, as of October 2026, has been installed more than 5,500 times in 175 countries with a worldwide rating of 4.6 from 83 ratings.</p>
+    <p>It is not related to <em>daydrop.app</em> (a journaling app) or to <em>DayDrop: Daily Planner</em>. If you are looking for countdowns and widgets, you are in the right place.</p>
+
+    <h2>Who makes it</h2>
+    <p><a href="https://hirakcoder.github.io">Hirak Banerjee</a> is a senior quality engineer in St. Thomas, Ontario, Canada, with fourteen years in banking, payments and insurance software. He builds DayDrop in the evenings and tests it the way he tests payment systems at work: committed XCUITest regression suites, device checks, and independent verification of anything an AI wrote. The lunar-calendar feature, for example, was checked day by day against the Hong Kong Observatory's official tables for 1,078 days before release, with zero mismatches.</p>
+    <ul>
+        <li>Portfolio: <a href="https://hirakcoder.github.io">hirakcoder.github.io</a></li>
+        <li>Code and open-source tools: <a href="https://github.com/hirakCoder">github.com/hirakCoder</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/hirak-banerjee-906aa940/">linkedin.com/in/hirak-banerjee-906aa940</a></li>
+    </ul>
+
+    <h2>How it is built</h2>
+    <p>Swift and SwiftUI, with WidgetKit for the ten widget placements, ActivityKit for the Dynamic Island and Lock Screen Live Activity, SwiftData for storage and CloudKit for iCloud sync between iPhone and iPad. AI backgrounds are generated through a small Cloudflare Worker that holds the image-model credentials, so no API keys ship inside the app and only your event description is sent. The App Store listing is localized into 16 languages by an automated pipeline, and the rating shown on this site is refreshed automatically from App Store Connect.</p>
+
+    <h2>What the guides on this site are for</h2>
+    <p>The <a href="/blog/">guides</a> answer the questions people actually ask about countdowns on iPhone, with App Store data pulled on the date stated in each one, and they compare DayDrop against competitors honestly, including where DayDrop is the smaller or more expensive option. When a guide is written by the developer of one of the apps it compares, it says so at the top.</p>
+
+    <h2>Contact</h2>
+    <p>Support questions and bug reports: see the <a href="/support.html">support page</a>. The developer reads every message.</p>
+
+    <footer class="footer-blog">
+        <a href="/">DayDrop</a>
+        <a href="/blog/">Guides</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+    </footer>
+</article>
+</body>
+</html>

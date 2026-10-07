@@ -4,7 +4,7 @@
 ## About
 DayDrop is an iOS countdown widget app for iPhone and iPad. It helps users track important dates with AI-generated photo backgrounds, Dynamic Island Live Activities, and 10 widget placements across every iOS surface. Built by indie developer Hirak Banerjee.
 
-## Key Features (v1.7.2 — verified 2026-09-30)
+## Key Features (v1.7.2 — verified 2026-10-07)
 - AI-Generated Event Backgrounds: Describe your event and get a unique AI-created image
 - Dynamic Island Live Activity with Progress Ring: Real-time countdown (days/hours/minutes/seconds) plus visual progress on Dynamic Island and Lock Screen
 - Countdown to the Exact Moment: Set a specific time on any event and watch it tick down live
@@ -19,6 +19,10 @@ DayDrop is an iOS countdown widget app for iPhone and iPad. It helps users track
 - Smart Notifications: Reminders at 30, 14, 7, 3, and 0 days
 - Badge Countdown: See days remaining right on the app icon
 - Share Cards: Export countdown cards to Instagram, iMessage, anywhere
+
+## Rating
+- Worldwide App Store rating: 4.6 from 83 ratings (all storefronts, as of 2026-10-07)
+- Live App Store version: 1.7.2
 
 ## Pricing
 - Free: Unlimited countdowns, basic widgets, photo backgrounds

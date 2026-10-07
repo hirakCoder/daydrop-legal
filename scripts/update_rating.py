@@ -58,6 +58,16 @@ def collect():
     return avg, total
 
 
+def live_version():
+    """Current App Store version string from the US storefront (falls back to the last one in llms.txt)."""
+    try:
+        with urllib.request.urlopen(f"https://itunes.apple.com/lookup?id={APP_ID}&country=us", timeout=15) as r:
+            return json.load(r)["results"][0]["version"]
+    except Exception:
+        m = re.search(r"- Live App Store version: ([\d.]+)", (REPO / "llms.txt").read_text())
+        return m.group(1) if m else "1.7.2"
+
+
 def sub_all(path, patterns):
     s = path.read_text()
     orig = s
@@ -86,6 +96,22 @@ def main():
         (r'(id="sticky-rating">)[\d.]+', rf"\g<1>{avg}"),
         (r'(id="stat-rating-value">)[\d.]+', rf"\g<1>{avg}"),
         (r'(id="stat-rating-count">)[\d,]+', rf"\g<1>{total}"),
+    ])
+    # llms.txt is what AI assistants read: keep rating, as-of date and live version current.
+    today = time.strftime("%Y-%m-%d")
+    version = live_version()
+    changed |= sub_all(REPO / "llms.txt", [
+        (r"(- Worldwide App Store rating: )[\d.]+ from \d+ ratings \(all storefronts, as of )[\d-]+", rf"\g<1>{avg} from {total} ratings (all storefronts, as of {today}"),
+        (r"(- Live App Store version: )[\d.]+", rf"\g<1>{version}"),
+        (r"(## Key Features \(v)[\d.]+( — verified )[\d-]+", rf"\g<1>{version}\g<2>{today}"),
+    ])
+    for guide in (REPO / "blog").glob("*.html"):
+        changed |= sub_all(guide, [
+            (r"(\d+) \(US\) &middot; \d+ worldwide", rf"\g<1> (US) &middot; {total} worldwide"),
+            (r"(DayDrop's worldwide rating is )[\d.]+ from \d+ ratings", rf"\g<1>{avg} from {total} ratings"),
+        ])
+    changed |= sub_all(REPO / "about.html", [
+        (r"(worldwide rating of )[\d.]+ from \d+ ratings", rf"\g<1>{avg} from {total} ratings"),
     ])
     roundup = REPO / "blog" / "best-countdown-apps-2026.html"
     changed |= sub_all(roundup, [

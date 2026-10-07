@@ -41,6 +41,8 @@
             {"@type": "Question", "name": "How many days until Christmas 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Christmas Day 2026 falls on Friday, December 25, 2026. A countdown widget like DayDrop shows the exact number of days remaining, updated automatically every day."}},
             {"@type": "Question", "name": "Can my iPhone show a Christmas countdown without opening an app?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. With DayDrop you can put the countdown on the Lock Screen below the clock, on the Home Screen as a widget, in the Dynamic Island as a Live Activity, and in StandBy mode while charging."}},
             {"@type": "Question", "name": "Can I use my own photo as the countdown background?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. DayDrop lets you use any photo from your library, or generate a background with AI — for example a cozy Christmas tree scene — directly inside the app."}},
+            {"@type": "Question", "name": "How many sleeps until Christmas 2026?", "acceptedAnswer": {"@type": "Answer", "text": "The same as the days left, counted from tonight: a countdown set to December 25, 2026 with no time shows Tomorrow on Christmas Eve and Today on Christmas morning. DayDrop updates the number automatically every day."}},
+            {"@type": "Question", "name": "Can I count down to Christmas Eve instead?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Create a second event for December 24, 2026. You can keep both on the Lock Screen at once."}},
             {"@type": "Question", "name": "Does the Christmas countdown update by itself?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Widgets update automatically throughout the day. The Dynamic Island Live Activity counts down in real time."}}
         ]
     }
@@ -79,11 +81,31 @@
     <a href="/" class="back">&larr; Back to DayDrop</a>
 
     <h1>How to Put a Christmas Countdown on Your iPhone</h1>
-    <p class="meta">Updated September 2026 &middot; 4 min read &middot; Real iPhone screenshots</p>
+    <p class="meta">Updated October 7, 2026 &middot; 6 min read &middot; Real iPhone screenshots</p>
 
     <p>Christmas Day 2026 falls on <strong>Friday, December 25</strong>. If you want the number of days left on your phone every time you glance at it — not buried in an app — iOS can show a Christmas countdown in four places: the <strong>Lock Screen</strong>, the <strong>Home Screen</strong>, the <strong>Dynamic Island</strong>, and <strong>StandBy</strong> mode.</p>
 
     <p>This guide sets up all four with <a href="/get">DayDrop</a> in about two minutes. Every screenshot below is a real, unedited iPhone capture. Works on <strong>iOS 18 and iOS 26</strong>.</p>
+
+    <div style="border:1px solid #E5E5E1;background:#fff;border-radius:16px;padding:20px 24px;margin:0 0 28px;text-align:center">
+        <div style="font-size:14px;color:#71717A;letter-spacing:.06em;text-transform:uppercase">Days until Christmas 2026</div>
+        <div id="xmas-days" style="font-size:56px;font-weight:700;letter-spacing:-.03em;line-height:1.1;margin:6px 0">79</div>
+        <div id="xmas-note" style="font-size:14px;color:#71717A">as of October 7, 2026 &middot; counting to Friday, December 25</div>
+    </div>
+    <script>
+    (function(){
+      var t=new Date(2026,11,25), n=new Date(); n.setHours(0,0,0,0);
+      var d=Math.round((t-n)/86400000);
+      var el=document.getElementById('xmas-days'), note=document.getElementById('xmas-note');
+      if(!el) return;
+      if(d>0){ el.textContent=d; note.textContent=d+(d===1?' sleep':' sleeps')+' to go, counting from today, '+n.toLocaleDateString(undefined,{month:'long',day:'numeric'}); }
+      else if(d===0){ el.textContent='Today'; note.textContent='Merry Christmas!'; }
+      else { var t2=new Date(2027,11,25), d2=Math.round((t2-n)/86400000); el.textContent=d2; note.textContent='until Christmas 2027'; }
+    })();
+    </script>
+
+    <h2>Days or "sleeps"?</h2>
+    <p>Kids count sleeps; adults count days. They are almost the same number: the sleeps left tonight equal the days left until the morning of December 25, which is what a countdown app shows when the event date is Christmas Day with no time set. If you want the countdown to end on Christmas <em>Eve</em> instead (presents under the tree, the Christmas Eve box), make a second event for December 24. DayDrop shows "Tomorrow" on the 24th and "Today!" on the 25th rather than a zero, which reads better on a child's Lock Screen.</p>
 
     <h2>Step 1: Create the Christmas Countdown</h2>
 
@@ -132,6 +154,9 @@
 
     <p><em>Live Activities, Lock Screen and Large widgets are DayDrop Premium ($1.99/month or $24.99 lifetime). The Home Screen Small and Medium widgets are free.</em></p>
 
+    <h2>Step 5: Show It on the Nightstand (StandBy)</h2>
+    <p>Put the iPhone on a charger on its side and it enters StandBy. Swipe left on the widget panel, press and hold, tap <strong>+</strong> and add the DayDrop widget. The Christmas countdown then glows on the bedside table all night, which is exactly where a child will check it first thing in the morning. StandBy needs iOS 17 or later and a charger; it works with any MagSafe or Lightning/USB-C charger as long as the phone is horizontal.</p>
+
     <h2>Bonus: Count Down the Whole Season at Once</h2>
 
     <p>December isn't just Christmas. DayDrop's <strong>Large multi-event widget</strong> shows several countdowns in one place — Christmas Eve, Christmas, New Year's Eve, a winter trip — each with its own image, stacked on a single widget. Create each event, add the Large widget, and it rotates the season for you.</p>
@@ -156,7 +181,19 @@
     <p>Yes. Use any photo from your library — last year's tree, the kids in pajamas — or generate one with AI inside the app.</p>
 
     <h3>Does the countdown update by itself?</h3>
-    <p>Yes. Widgets refresh automatically throughout the day, and the Live Activity counts down in real time. No manual refreshing.</p>
+    <p>Yes. Widgets refresh automatically through the day and roll over at midnight. The Live Activity shows the days left with a progress ring, and in the final 24 hours it ticks down hours, minutes and seconds to Christmas morning. No manual refreshing.</p>
+
+    <h3>How many sleeps until Christmas 2026?</h3>
+    <p>The same as the days shown above, counted from tonight. A countdown set to December 25 with no time shows "Tomorrow" on Christmas Eve and "Today!" on Christmas morning.</p>
+
+    <h3>Can I count down to Christmas Eve instead?</h3>
+    <p>Yes. Create a second event for December 24. Many families keep both: one for the Christmas Eve box, one for the morning.</p>
+
+    <h3>Does the Christmas countdown work on iPad?</h3>
+    <p>Yes. DayDrop runs on iPad with the same Home Screen and Lock Screen widgets plus an ExtraLarge widget, and the countdown syncs between iPhone and iPad over iCloud with Premium.</p>
+
+    <h3>Will the countdown reset for next year?</h3>
+    <p>Turn on repeat yearly when you create the event and it rolls over to Christmas 2027 automatically on December 26.</p>
 
     <h3>Where else can I put countdowns?</h3>
     <p>See our full guide to <a href="/blog/countdown-widget-iphone.html">adding countdown widgets on iPhone</a> — Home Screen, Lock Screen, and StandBy — or compare apps in <a href="/blog/best-countdown-apps-2026.html">the best countdown apps for 2026</a>.</p>

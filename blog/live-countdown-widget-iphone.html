@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Countdown Widget on iPhone: How to Get Seconds Ticking (Widgets vs Live Activities)</title>
+    <meta name="description" content="Why most iPhone countdown widgets show days instead of ticking seconds, the one way a widget can tick live, and how a Live Activity puts a real-time countdown in the Dynamic Island and on the Lock Screen. Steps for iOS 18 and 26, plus the apps that support it.">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://daydrop.beatroot.dev/blog/live-countdown-widget-iphone.html">
+    <meta property="og:title" content="Live Countdown Widget on iPhone: How to Get Seconds Ticking">
+    <meta property="og:description" content="Widgets vs Live Activities, explained plainly, with steps for iOS 18 and 26 and the apps that support a live ticking countdown.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://daydrop.beatroot.dev/blog/live-countdown-widget-iphone.html">
+    <meta property="og:image" content="https://daydrop.beatroot.dev/assets/AppIcon-og.png">
+    <meta name="apple-itunes-app" content="app-id=6759470132">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to get a live, ticking countdown on iPhone",
+        "description": "Start a Live Activity so a countdown ticks in the Dynamic Island and on the Lock Screen, using an app that supports it.",
+        "totalTime": "PT2M",
+        "step": [
+            {"@type": "HowToStep", "name": "Use an app with a countdown Live Activity", "text": "Install an app whose listing includes a Live Activity or Dynamic Island countdown, such as DayDrop or Countdown: Event Countdown."},
+            {"@type": "HowToStep", "name": "Create the event with a time", "text": "Add the event and set a specific time, not just a date, so the countdown has an exact moment to count to."},
+            {"@type": "HowToStep", "name": "Start the Live Activity", "text": "Open the event and tap the Go Live (or Live Activity) button. In DayDrop this is on the event screen."},
+            {"@type": "HowToStep", "name": "Check the Dynamic Island and Lock Screen", "text": "Lock the phone: the countdown ticks on the Lock Screen. On iPhone 14 Pro and later it also sits in the Dynamic Island; press and hold it for the expanded view."},
+            {"@type": "HowToStep", "name": "Allow Live Activities if nothing appears", "text": "Settings → the app → Live Activities on, and Settings → Face ID & Passcode → Live Activities on for the Lock Screen."}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Why doesn't my iPhone countdown widget tick down by the second?", "acceptedAnswer": {"@type": "Answer", "text": "Home Screen and Lock Screen widgets are snapshots that iOS redraws on a schedule with a daily refresh budget, so they normally show whole days. iOS does allow a timer-style text inside a widget that counts down on its own; DayDrop uses it for the final 24 hours before an event with a set time, but most countdown apps don't. For a countdown that ticks continuously, you need a Live Activity."}},
+            {"@type": "Question", "name": "What is a Live Activity?", "acceptedAnswer": {"@type": "Answer", "text": "A Live Activity is the real-time element iOS uses for things like sports scores, deliveries and timers. It appears on the Lock Screen and, on iPhone 14 Pro and later, in the Dynamic Island, and it can show a timer ticking by the second. iOS ends a Live Activity after a maximum of 8 hours, then keeps it on the Lock Screen for up to 4 more hours before removing it; the app has to start a new one after that."}},
+            {"@type": "Question", "name": "Which countdown apps have a Live Activity?", "acceptedAnswer": {"@type": "Answer", "text": "Among popular iPhone countdown apps, two describe a Dynamic Island Live Activity in their App Store listing as of October 2026: Countdown: Event Countdown by ROOT38 and DayDrop. Most countdown apps offer widgets only."}},
+            {"@type": "Question", "name": "Does a live countdown drain the battery?", "acceptedAnswer": {"@type": "Answer", "text": "A Live Activity timer is rendered by iOS from a start and end time, so the app does not run in the background to tick it; the cost is small. The 8-hour limit is Apple's safeguard, which is why long countdowns show days in the Live Activity and switch to a ticking timer near the end."}},
+            {"@type": "Question", "name": "Can a Live Activity count down for weeks?", "acceptedAnswer": {"@type": "Answer", "text": "Not continuously. iOS ends a Live Activity after 8 hours (the app then has to start a new one), so apps show days remaining in the Live Activity for far-off events and switch to hours, minutes and seconds within the last day. DayDrop shows days with a progress ring and ticks the sub-unit remainder; the full H:MM:SS appears in the final 24 hours."}}
+        ]
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; background: #FBFBF9; color: #1D1D1F; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        .article { max-width: 720px; margin: 0 auto; padding: 88px 24px 60px; }
+        .back { color: #0063D6; text-decoration: none; font-size: 15px; display: inline-block; margin-bottom: 36px; }
+        h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 650; letter-spacing: -0.025em; margin-bottom: 16px; line-height: 1.15; text-wrap: balance; }
+        .meta { color: #71717A; font-size: 14px; margin-bottom: 40px; }
+        h2 { font-size: 24px; font-weight: 650; letter-spacing: -0.015em; margin: 44px 0 16px; }
+        h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 32px 0 12px; }
+        p { font-size: 17px; color: #3E3E43; margin-bottom: 16px; }
+        ol, ul { margin: 0 0 16px 24px; color: #3E3E43; }
+        li { margin-bottom: 8px; font-size: 16px; }
+        a { color: #0063D6; }
+        .answer { border-left: 3px solid #0A7AFF; background: #fff; padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 0 0 28px; }
+        .answer p { margin-bottom: 8px; }
+        .step { border: 1px solid #E5E5E1; background: #fff; padding: 20px 24px; border-radius: 16px; margin: 16px 0; }
+        .step-num { color: #71717A; font-weight: 600; font-size: 12px; letter-spacing: 0.1em; margin-bottom: 8px; }
+        .tbl { overflow-x: auto; margin: 24px 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 15px; }
+        th, td { text-align: left; padding: 10px 10px; border-bottom: 1px solid #E5E5E1; vertical-align: top; }
+        th { font-weight: 600; color: #1D1D1F; background: #F4F4F1; }
+        .cta-box { border: 1px solid #E5E5E1; background: #F4F4F1; padding: 28px 24px; border-radius: 16px; text-align: center; margin: 40px 0; }
+        .cta-box a { background: #0A7AFF; color: #fff; padding: 12px 28px; border-radius: 100px; text-decoration: none; font-weight: 500; display: inline-block; margin-top: 12px; }
+        .footer-blog { text-align: center; padding: 40px 0; border-top: 1px solid #E5E5E1; margin-top: 60px; }
+        .footer-blog a { color: #71717A; text-decoration: none; margin: 0 16px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<article class="article">
+    <a href="/blog/" class="back">&larr; All guides</a>
+
+    <h1>Live Countdown Widget on iPhone: How to Get Seconds Ticking</h1>
+    <p class="meta">Updated October 7, 2026 &middot; 6 min read &middot; iOS 18 and iOS 26 &middot; written by the developer of DayDrop</p>
+
+    <div class="answer">
+        <p><strong>Short answer:</strong> a normal Home Screen or Lock Screen widget cannot stay live for days; iOS redraws widgets on a schedule, so they show whole days. For a countdown that ticks by the second, start a <strong>Live Activity</strong> in an app that supports one. It appears on the Lock Screen and, on iPhone 14 Pro and later, in the Dynamic Island. Two popular countdown apps list one: Countdown: Event Countdown and DayDrop.</p>
+        <p>One nuance: iOS does allow a timer-style text inside a widget that ticks on its own. DayDrop uses it so its widgets show hours, minutes and seconds in the final 24 hours before an event with a set time. Most countdown apps don't.</p>
+    </div>
+
+    <h2>Widgets and Live Activities are different things</h2>
+    <div class="tbl"><table>
+        <tr><th></th><th>Widget</th><th>Live Activity</th></tr>
+        <tr><td>Where</td><td>Home Screen, Lock Screen, StandBy</td><td>Lock Screen and Dynamic Island</td></tr>
+        <tr><td>How it updates</td><td>iOS redraws it on a schedule from a timeline the app supplies; limited refreshes per day</td><td>iOS renders a live timer from a start and end time; the app can push updates</td></tr>
+        <tr><td>Can it tick seconds?</td><td>Only via a timer-style text, which few apps use; otherwise no</td><td>Yes, continuously</td></tr>
+        <tr><td>How long it lasts</td><td>Permanent until you remove it</td><td>Ends after 8 hours (the app must start a new one); lingers on the Lock Screen up to 4 hours after ending</td></tr>
+        <tr><td>Best for</td><td>"42 days to Lisbon" at a glance</td><td>The last day, the last hour, the last ten seconds</td></tr>
+    </table></div>
+    <p>So the honest setup is both: a widget for the long view, a Live Activity when the event is close. Apps that know this show days in the Live Activity for far-off events and switch to a ticking clock as the moment approaches; DayDrop also fills a progress ring as the day gets closer.</p>
+
+    <h2>How to start a live countdown (iOS 18 and iOS 26)</h2>
+    <div class="step"><div class="step-num">STEP 1</div><p>Install an app whose listing includes a Live Activity or Dynamic Island countdown. <a href="/get">DayDrop</a> and Countdown: Event Countdown both do.</p></div>
+    <div class="step"><div class="step-num">STEP 2</div><p>Create the event and <strong>set a time</strong>, not just a date. A countdown can only tick to an exact moment.</p></div>
+    <div class="step"><div class="step-num">STEP 3</div><p>Open the event and tap <strong>Go Live</strong> (DayDrop) or the app's Live Activity button. In DayDrop the Live Activity is a Premium feature; the yearly plan has a one-month free trial.</p></div>
+    <div class="step"><div class="step-num">STEP 4</div><p>Lock the phone. The countdown ticks on the Lock Screen. On iPhone 14 Pro and later it also sits in the Dynamic Island; press and hold it for the expanded view with the progress ring.</p></div>
+    <div class="step"><div class="step-num">STEP 5</div><p>Nothing showing? Check <strong>Settings &rarr; the app &rarr; Live Activities</strong> is on, and <strong>Settings &rarr; Face ID &amp; Passcode &rarr; Live Activities</strong> is on so it appears on the Lock Screen.</p></div>
+
+    <h2>Why Apple built it this way</h2>
+    <p>A widget that redrew every second would keep the display pipeline busy for every widget on every Home Screen, so iOS gives each widget a daily budget of refreshes based on how often you look at it. A Live Activity is the sanctioned way to show something changing in real time: iOS itself draws the timer from a start and end time, the app doesn't run in the background to tick it, and the 8-hour cap stops a forgotten activity from living forever. That is also why a countdown Live Activity for an event three weeks away shows days rather than a 500-hour clock.</p>
+
+    <h2>Apps with a live countdown, per their App Store listing</h2>
+    <div class="tbl"><table>
+        <tr><th>App</th><th>Live Activity / Dynamic Island</th><th>Ticking seconds in widgets</th><th>Rating (US, Oct 7 2026)</th></tr>
+        <tr><td><strong>DayDrop</strong></td><td>Yes, with progress ring and exact-time countdown (Premium)</td><td>Yes, final 24 hours before a timed event</td><td>4.76 &middot; 21 (84 worldwide)</td></tr>
+        <tr><td>Countdown: Event Countdown (ROOT38)</td><td>Yes (Premium)</td><td>Not listed</td><td>4.75 &middot; 23,872</td></tr>
+        <tr><td>Countdown (Find Appiness)</td><td>Not listed</td><td>Not listed</td><td>4.81 &middot; 187,887</td></tr>
+        <tr><td>Countdown Star</td><td>Not listed</td><td>Not listed</td><td>4.77 &middot; 215,980</td></tr>
+        <tr><td>Widgetsmith</td><td>Not listed</td><td>Not listed</td><td>4.61 &middot; 774,351</td></tr>
+    </table></div>
+
+    <div class="cta-box">
+        <p><strong>DayDrop</strong>: days with a progress ring in the Dynamic Island, hours, minutes and seconds in the final day, and an AI-generated background that follows the countdown to every surface. Free to download; the Live Activity is in Premium with a one-month free trial on the yearly plan.</p>
+        <a href="/get">Download DayDrop</a>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <h3>Why doesn't my iPhone countdown widget tick down by the second?</h3>
+    <p>Widgets are snapshots iOS redraws on a schedule, so they show whole days. iOS allows a timer-style text inside a widget (DayDrop uses it for the final 24 hours), but most apps don't. For a continuous tick, use a Live Activity.</p>
+    <h3>What is a Live Activity?</h3>
+    <p>The real-time element iOS uses for scores, deliveries and timers. It shows on the Lock Screen and, on iPhone 14 Pro and later, in the Dynamic Island, and can tick by the second. It ends after 8 hours (the app then has to start a new one) and lingers on the Lock Screen up to 4 hours after ending.</p>
+    <h3>Which countdown apps have a Live Activity?</h3>
+    <p>As of October 2026, Countdown: Event Countdown by ROOT38 and DayDrop describe one in their listings. Most countdown apps offer widgets only.</p>
+    <h3>Does a live countdown drain the battery?</h3>
+    <p>Very little. iOS renders the timer from a start and end time; the app doesn't run to tick it.</p>
+    <h3>Can a Live Activity count down for weeks?</h3>
+    <p>Not continuously, because of the 8-hour limit. Apps show days for far-off events and switch to a ticking clock in the last day.</p>
+    <h3>My widget is stuck on the wrong number of days.</h3>
+    <p>That's a refresh problem, not a feature gap: see <a href="/blog/countdown-widget-not-updating.html">Countdown widget not updating on iPhone: 7 fixes</a>.</p>
+
+    <h2>Related guides</h2>
+    <ul>
+        <li><a href="/blog/dynamic-island-countdown-ai-background-iphone.html">Countdown in the Dynamic Island with an AI-generated background</a></li>
+        <li><a href="/blog/countdown-lock-screen-widget-iphone.html">Countdown widget on the iPhone Lock Screen: setup and 8 apps compared</a></li>
+        <li><a href="/blog/countdown-widget-iphone.html">How to add a countdown widget on iPhone</a></li>
+    </ul>
+
+    <footer class="footer-blog">
+        <a href="/">DayDrop</a>
+        <a href="/blog/">Guides</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+    </footer>
+</article>
+
+</body>
+</html>

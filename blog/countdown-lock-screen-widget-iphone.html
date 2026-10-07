@@ -38,7 +38,7 @@
         "@type": "FAQPage",
         "mainEntity": [
             {"@type": "Question", "name": "Does iOS have a built-in countdown widget for the Lock Screen?", "acceptedAnswer": {"@type": "Answer", "text": "No. iOS 18 and iOS 26 ship Lock Screen widgets for Calendar, Reminders, Weather, Clock, Fitness and Batteries, but none of them counts down to a date you choose. You need a third-party countdown app that offers Lock Screen widgets."}},
-            {"@type": "Question", "name": "Why doesn't my Lock Screen countdown widget show seconds?", "acceptedAnswer": {"@type": "Answer", "text": "Apple limits how often widgets can redraw to protect battery life, so a Lock Screen widget is refreshed on a schedule, not every second. For a live ticking countdown use a Live Activity, which runs on the Lock Screen and in the Dynamic Island and can show hours, minutes and seconds."}},
+            {"@type": "Question", "name": "Why doesn't my Lock Screen countdown widget show seconds?", "acceptedAnswer": {"@type": "Answer", "text": "Apple limits how often widgets can redraw to protect battery life, so a Lock Screen widget is refreshed on a schedule. iOS does allow a live timer text inside a widget, which DayDrop uses for the final 24 hours before an event, but most countdown apps don't. For a countdown that ticks for days, use a Live Activity, which runs on the Lock Screen and in the Dynamic Island and shows hours, minutes and seconds."}},
             {"@type": "Question", "name": "How many countdown widgets fit on the Lock Screen?", "acceptedAnswer": {"@type": "Answer", "text": "The strip under the clock holds up to four small slots: four circular widgets, two rectangular widgets, or one rectangular and two circular. One inline widget fits in the line above the clock, so you can show up to five countdowns at once."}},
             {"@type": "Question", "name": "Are Lock Screen countdown widgets free?", "acceptedAnswer": {"@type": "Answer", "text": "Every app in this comparison is free to download. Most, including DayDrop, place Lock Screen widgets in a paid tier or unlock them with an in-app purchase. DayDrop's Home Screen widgets are free; Lock Screen widgets are part of Premium, which has a one-month free trial on the yearly plan."}},
             {"@type": "Question", "name": "Can I have a different countdown on each Lock Screen?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each Lock Screen you create keeps its own widgets, so you can pair a holiday countdown with one wallpaper and a trip countdown with another, then swipe between them."}}
@@ -89,7 +89,7 @@
 
     <div class="answer">
         <p><strong>Short answer:</strong> iOS has no built-in countdown widget, so install a countdown app that supports Lock Screen widgets, create the event, then press and hold the Lock Screen, tap <strong>Customize &rarr; Lock Screen</strong>, tap the strip under the clock and add the app's circular, rectangular or inline widget. It takes about two minutes.</p>
-        <p>One limit to know before you start: Lock Screen widgets refresh on Apple's schedule, so they show days (and sometimes hours), not ticking seconds. If you want seconds, use a Live Activity instead; the section below explains the difference.</p>
+        <p>One limit to know before you start: Lock Screen widgets refresh on Apple's schedule, so most show days, not ticking seconds. iOS allows a live timer text inside a widget, and DayDrop uses it for the final 24 hours, but for a countdown that ticks for days you want a Live Activity; the section below explains the difference.</p>
     </div>
 
     <h2>The three Lock Screen widget shapes</h2>
@@ -125,8 +125,8 @@
     </div>
     <p>If the app doesn't appear in the widget list, open it once first; iOS registers an app's widgets on first launch. If a widget shows placeholder text, tap it and pick an event.</p>
 
-    <h2>Why a Lock Screen widget can't tick every second</h2>
-    <p>Widgets on iOS are snapshots. The system asks the app for a timeline of images and shows them on a schedule it controls, with a daily budget of refreshes to protect battery. A countdown that changes once a day fits that model perfectly; a countdown that changes every second does not, and Apple doesn't allow widgets to redraw that often. That is why every app in the table below shows days, and at best hours, on the Lock Screen.</p>
+    <h2>Why most Lock Screen widgets don't tick every second</h2>
+    <p>Widgets on iOS are snapshots. The system asks the app for a timeline of states and shows them on a schedule it controls, with a daily budget of refreshes to protect battery. A countdown that changes once a day fits that model; one that changes every second does not. There is one exception: iOS lets a widget contain a timer-style text that counts down on its own without a refresh. DayDrop uses it to show hours, minutes and seconds in its widgets for the final 24 hours before an event with a set time. Most countdown apps don't, which is why their Lock Screen widgets show days, and at best hours.</p>
     <p>The exception is a <strong>Live Activity</strong>. Live Activities are the Lock Screen and Dynamic Island elements that sports scores and food-delivery apps use, and they can run a true ticking timer. DayDrop's Live Activity shows days, hours, minutes and seconds with a progress ring, in the Dynamic Island and on the Lock Screen, for events with a set time. If seconds matter to you, that is the feature to look for; see <a href="/blog/dynamic-island-countdown-ai-background-iphone.html">the Dynamic Island countdown guide</a>.</p>
 
     <h2>8 countdown apps with Lock Screen widgets, compared</h2>
@@ -163,7 +163,7 @@
     <p>No. iOS 18 and iOS 26 ship Lock Screen widgets for Calendar, Reminders, Weather, Clock, Fitness and Batteries, but none of them counts down to a date you choose. You need a third-party countdown app.</p>
 
     <h3>Why doesn't my Lock Screen countdown widget show seconds?</h3>
-    <p>Apple limits how often widgets can redraw to protect battery life, so a Lock Screen widget refreshes on a schedule rather than every second. For a live ticking countdown use a Live Activity, which runs on the Lock Screen and in the Dynamic Island.</p>
+    <p>Apple limits how often widgets can redraw, so a Lock Screen widget refreshes on a schedule. iOS does allow a live timer text inside a widget (DayDrop uses it for the final 24 hours before an event), but most countdown apps don't. For a countdown that ticks for days, use a Live Activity on the Lock Screen and in the Dynamic Island.</p>
 
     <h3>How many countdown widgets fit on the Lock Screen?</h3>
     <p>Up to four small slots under the clock (four circular, two rectangular, or one rectangular plus two circular) and one inline widget above the clock, so five countdowns at once.</p>

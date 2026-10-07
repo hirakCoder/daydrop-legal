@@ -95,7 +95,7 @@
 
     <ul>
         <li><strong>Each widget gets a limited number of refreshes per day.</strong> iOS allocates them based on how often you actually look at the widget. A widget you never scroll past gets refreshed less often.</li>
-        <li><strong>Widgets can't tick by the second.</strong> A Home Screen or Lock Screen widget is a snapshot, not a live view. Anything counting down in real time — seconds ticking, a progress ring filling — is a <em>Live Activity</em> on the Lock Screen and in the Dynamic Island, which is a different iOS feature entirely.</li>
+        <li><strong>Widgets can't be redrawn whenever the app likes.</strong> A Home Screen or Lock Screen widget is a snapshot. iOS allows one exception, a timer-style text that counts down on its own without a refresh (DayDrop uses it for the final 24 hours before an event with a set time), but most countdown apps don't, and nothing else in a widget animates. Anything that must stay live for days, such as a progress ring filling, is a <em>Live Activity</em> on the Lock Screen and in the Dynamic Island, which is a different mechanism.</li>
     </ul>
 
     <p>So a countdown widget showing whole days is expected to change <strong>once a day, around midnight</strong> — not the instant the date rolls over. A few hours of lag on the day boundary is normal. Days of lag is not.</p>
@@ -178,7 +178,7 @@
     <p>iOS decides, not the app. A widget showing whole days typically only needs to change once, around midnight. There's no setting to make widgets refresh more often.</p>
 
     <h3>Why doesn't my countdown tick down by the second?</h3>
-    <p>Widgets are snapshots redrawn on a schedule, so they can't animate. Second-by-second countdowns run as a Live Activity on the Lock Screen and in the Dynamic Island instead.</p>
+    <p>Widgets are snapshots redrawn on a schedule. iOS does allow a timer-style text to count down live inside a widget, and DayDrop shows one for the last 24 hours before an event with a set time, but most countdown apps don't use it. For a countdown that ticks for days, use a Live Activity on the Lock Screen and in the Dynamic Island. See <a href="/blog/live-countdown-widget-iphone.html">how to get a live, ticking countdown on iPhone</a>.</p>
 
     <h3>Does Low Power Mode stop widgets updating?</h3>
     <p>Yes — it's the most common cause of a stale widget, and the first thing to check.</p>

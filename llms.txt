@@ -14,7 +14,7 @@ DayDrop is an iOS countdown widget app for iPhone and iPad. It helps users track
 - Orbital Year View: See your whole year of countdowns in a single circular timeline
 - Image Opacity Control: Fine-tune how your event photos appear
 - Birthday Import: Pull birthdays from Contacts with duplicate detection
-- iCloud Sync: All countdowns sync across iPhone, iPad, and Mac
+- iCloud Sync: All countdowns sync across iPhone and iPad
 - 16 Languages: Full interface localization
 - Smart Notifications: Reminders at 30, 14, 7, 3, and 0 days
 - Badge Countdown: See days remaining right on the app icon
@@ -23,7 +23,7 @@ DayDrop is an iOS countdown widget app for iPhone and iPad. It helps users track
 ## Pricing
 - Free: Unlimited countdowns, basic widgets, photo backgrounds
 - Monthly ($1.99/month)
-- Annual ($12.99/year): AI backgrounds (iPhone + Watch), all 10 widget placements, Live Activity with progress ring, multi-event widget, exact-time countdown, premium share cards, iCloud sync (1-month free trial)
+- Annual ($12.99/year): AI backgrounds, all 10 widget placements, Live Activity with progress ring, multi-event widget, exact-time countdown, premium share cards, iCloud sync (1-month free trial)
 - Lifetime ($24.99): Everything, forever
 - Regional pricing available in 30+ countries including India, Philippines, Vietnam, Brazil, Indonesia, Turkey, Mexico, and more
 
@@ -64,7 +64,7 @@ DayDrop is an iOS countdown widget app for iPhone and iPad. It helps users track
 - App Store: https://apps.apple.com/app/id6759470132
 
 ## Technical
-- Built with: SwiftUI, WidgetKit, ActivityKit, SwiftData, WatchConnectivity
-- Requirements: iOS 18.0+, iPadOS 18.0+, watchOS 11.0+
+- Built with: SwiftUI, WidgetKit, ActivityKit, SwiftData
+- Requirements: iOS 18.0+, iPadOS 18.0+
 - iCloud sync via CloudKit
 - Privacy: no user data collection, no ads, AI image generation happens via secure API with user consent

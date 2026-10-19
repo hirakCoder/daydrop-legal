@@ -92,4 +92,24 @@
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
+  <url>
+    <loc>https://daydrop.beatroot.dev/days-until/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://daydrop.beatroot.dev/days-until/halloween/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://daydrop.beatroot.dev/days-until/christmas/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://daydrop.beatroot.dev/days-until/new-year/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>

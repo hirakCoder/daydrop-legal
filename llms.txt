@@ -32,6 +32,7 @@ DayDrop is an iOS countdown widget app for iPhone and iPad. It helps users track
 - Regional pricing available in 30+ countries including India, Philippines, Vietnam, Brazil, Indonesia, Turkey, Mexico, and more
 
 ## Key Pages
+- [Live countdowns: days until every holiday](https://daydrop.beatroot.dev/days-until/): live, time-zone-correct countdowns to Halloween, Diwali, Thanksgiving, Hanukkah, Christmas, New Year, Lunar New Year, Valentine's Day and Easter (dates verified 2026-10-18); dedicated pages for [Halloween 2026](https://daydrop.beatroot.dev/days-until/halloween/), [Christmas 2026](https://daydrop.beatroot.dev/days-until/christmas/) and [New Year 2027](https://daydrop.beatroot.dev/days-until/new-year/)
 - Homepage: https://daydrop.beatroot.dev
 - Blog: https://daydrop.beatroot.dev/blog/
 - Best wedding countdown apps for iPhone 2026 (planner vs countdown apps, 7 compared): https://daydrop.beatroot.dev/blog/wedding-countdown-app-iphone.html

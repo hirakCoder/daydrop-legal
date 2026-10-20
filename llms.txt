@@ -69,8 +69,7 @@ DayDrop is an iOS countdown widget app for iPhone and iPad. It helps users track
 - Developer: Hirak Banerjee
 - Platform: iOS 18+, iPadOS 18+
 - Category: Utilities / Productivity
-- Rating: 4.8/5 stars
-- Current Version: 1.5
+- Rating and current version: see the Rating section above (updated automatically every day from the App Store)
 - Twitter: @hirak8
 - App Store: https://apps.apple.com/app/id6759470132
 

@@ -97,9 +97,20 @@ def main():
         (r'(id="stat-rating-value">)[\d.]+', rf"\g<1>{avg}"),
         (r'(id="stat-rating-count">)[\d,]+', rf"\g<1>{total}"),
     ])
+    # The live version, wherever the site states it as the CURRENT version. (The comparison note
+    # "features verified against vX on <date>" is a dated statement and is left alone.) These sat
+    # at 1.7.2 for days after 1.7.3 shipped because only llms.txt was kept in step.
+    live = live_version()
+    changed |= sub_all(idx, [
+        (r'("softwareVersion": ")[\d.]+', rf"\g<1>{live}"),
+        (r"(DayDrop v)[\d.]+(, requires iOS)", rf"\g<1>{live}\g<2>"),
+    ])
+    changed |= sub_all(REPO / "blog" / "best-countdown-apps-2026.html", [
+        (r"(<strong>DayDrop</strong> \(v)[\d.]+(\))", rf"\g<1>{live}\g<2>"),
+    ])
     # llms.txt is what AI assistants read: keep rating, as-of date and live version current.
     today = time.strftime("%Y-%m-%d")
-    version = live_version()
+    version = live
     changed |= sub_all(REPO / "llms.txt", [
         (r"(- Worldwide App Store rating: )[\d.]+ from \d+ ratings \(all storefronts, as of [\d-]+\)", rf"\g<1>{avg} from {total} ratings (all storefronts, as of {today})"),
         (r"(- Live App Store version: )[\d.]+", rf"\g<1>{version}"),

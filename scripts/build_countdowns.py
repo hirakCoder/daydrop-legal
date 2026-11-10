@@ -19,7 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "days-until"
 SITE = "https://daydrop.beatroot.dev"
-UPDATED = "2026-10-18"
+UPDATED = "2026-11-09"
 BEACON = "571adcf922b646e7af20f34c676c4c9b"
 
 # Pages (have their own URL). Dates are fixed-calendar holidays; weekdays computed below.
@@ -27,21 +27,21 @@ EVENTS = [
     {
         "slug": "halloween",
         "name": "Halloween",
-        "year": 2026,
-        "date": dt.date(2026, 10, 31),
-        "next": dt.date(2027, 10, 31),
+        "year": 2027,
+        "date": dt.date(2027, 10, 31),
+        "next": dt.date(2028, 10, 31),
         "regions": "us canada europe oceania other",
         "emoji": "🎃",
-        "intro": "Halloween is always on October 31. In 2026 it lands on a Saturday, so trick-or-treating, "
-                 "parties and the late night all fall on the weekend for most people.",
+        "intro": "Halloween is always on October 31. In 2027 it lands on a Sunday, so trick-or-treating "
+                 "falls on a school night for most children and many parties move to Saturday, October 30.",
         "notes": [
             "Costume shops and pumpkin patches get busy in the last two weeks, so the countdown is a useful nudge to sort costumes early.",
-            "Because October 31 is a Saturday in 2026, many community events and school parades move to Friday, October 30. Check locally.",
+            "Because October 31 is a Sunday in 2027, some towns hold community trick-or-treating on Saturday, October 30 instead. Check locally.",
         ],
         "faq": [
-            ("What day of the week is Halloween 2026?", "Halloween 2026 is on Saturday, October 31, 2026."),
-            ("How many days until Halloween 2026?", "The counter at the top of this page shows the live number of days, hours and minutes, calculated in your own time zone to the start of October 31, 2026."),
-            ("When is Halloween 2027?", "Halloween 2027 is on Sunday, October 31, 2027. The date never changes, only the weekday."),
+            ("What day of the week is Halloween 2027?", "Halloween 2027 is on Sunday, October 31, 2027."),
+            ("How many days until Halloween 2027?", "The counter at the top of this page shows the live number of days, hours and minutes, calculated in your own time zone to the start of October 31, 2027."),
+            ("When is Halloween 2028?", "Halloween 2028 is on Tuesday, October 31, 2028. The date never changes, only the weekday."),
             ("Can I keep a Halloween countdown on my iPhone?", "Yes. In DayDrop, create an event called Halloween for October 31, then add the DayDrop widget to your Lock Screen or Home Screen. It updates by itself, and you can use your own photo or generate a spooky background."),
         ],
     },
@@ -91,12 +91,13 @@ EVENTS = [
     },
 ]
 
-# Hub-only entries (no page of their own yet). Every date verified on 2026-10-18:
-# Diwali (Lakshmi Puja) Nov 8 2026 — Farmers' Almanac / Wikipedia; Thanksgiving US = 4th Thursday of Nov;
+# Hub-only entries (no page of their own yet). Dates verified on 2026-10-18, except Diwali, rolled to
+# 2027 on 2026-11-09 after the 2026 festival passed: Diwali (Lakshmi Puja) Fri Oct 29 2027 — panchang
+# listings for Delhi and Pune (dekhopanchang.com, daanyam.in); Thanksgiving US = 4th Thursday of Nov;
 # Hanukkah begins at sundown Dec 4 2026 — Hebcal via Farmers' Almanac; Lunar New Year Feb 6 2027 —
 # China Highlights / RMG; Easter (Western) Mar 28 2027 — Almanac / Wikipedia; Valentine's fixed Feb 14.
 HUB_ONLY = [
-    ("Diwali", dt.date(2026, 11, 8), "south-asia canada us europe", "🪔", "Lakshmi Puja night; the five-day festival runs Nov 6–10, 2026."),
+    ("Diwali", dt.date(2027, 10, 29), "south-asia canada us europe", "🪔", "Lakshmi Puja night; the five-day festival runs Oct 27–31, 2027."),
     ("Thanksgiving (US)", dt.date(2026, 11, 26), "us", "🦃", "Always the fourth Thursday of November."),
     ("Hanukkah", dt.date(2026, 12, 4), "us canada europe other", "🕎", "Begins at sundown on Friday, December 4 and ends December 12, 2026."),
     ("Lunar New Year", dt.date(2027, 2, 6), "east-asia canada us oceania", "🧧", "Year of the Goat begins; New Year’s Eve is February 5."),

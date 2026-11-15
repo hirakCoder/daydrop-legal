@@ -108,8 +108,8 @@
   "count": 0
  },
  "co": {
-  "avg": 4,
-  "count": 1
+  "avg": 4.5,
+  "count": 2
  },
  "cr": {
   "avg": 0,
@@ -120,8 +120,8 @@
   "count": 0
  },
  "de": {
-  "avg": 4.5,
-  "count": 4
+  "avg": 4.59999,
+  "count": 5
  },
  "dk": {
   "avg": 5,
@@ -404,8 +404,8 @@
   "count": 0
  },
  "sa": {
-  "avg": 0,
-  "count": 0
+  "avg": 5,
+  "count": 1
  },
  "se": {
   "avg": 5,
